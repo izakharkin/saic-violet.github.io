@@ -8,6 +8,8 @@ permalink: /neuralavatar
 <!doctype html>
 <html lang="en">
   <head>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+
       <script src="https://d3js.org/d3.v5.min.js"></script>
       <script src="js/jquery-3.4.1.js"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
@@ -174,10 +176,10 @@ permalink: /neuralavatar
                     Source Image
                   </div>
                   <div class="column">
-                    Texture inpainted w/ color
+                    Texture (<b><i>color</i></b>-inpainted)
                   </div>
                   <div class="column">
-                    Texture inpainted w/ coordinates
+                      Texture (<b><i>coord</i></b>-inpainted)
                   </div>
               </div>
               <div class="column_out">
@@ -185,10 +187,10 @@ permalink: /neuralavatar
                     Source Image
                   </div>
                   <div class="column">
-                    Texture inpainted w/ color
+                    Texture (<b><i>color</i></b>-inpainted)
                   </div>
                   <div class="column">
-                    Texture inpainted w/ coordinates
+                    Texture (<b><i>coord</i></b>-inpainted)
                   </div>
               </div>
             </div>
@@ -348,18 +350,18 @@ permalink: /neuralavatar
     <!-- <div class="col-xs-8 col-xs-offset-2 text-justify"> -->
     <div class="section_title">Main idea</div>
     <p align="justify"> <!-- style="text-indent: 30px" -->
-        Our method performs human image reconstruction via texture inpainting. We use <a href='http://densepose.org/'>DensePose</a> approach to extimate UV renders, that is mappings between pixel positions in image (source or target) space and texture space. Once source image is mapped into the texture space, full texture is extimated and then warped onto the target space to be refined. Thus, the pipeline consists of two convolutional networks: inpainter <i>f</i> that reconstructs full texture from a partially visible, while refiner <i>g</i> processes warped onto the target space texture to generate new view. 
+        Our method performs human image reconstruction via texture inpainting. We use <a href='http://densepose.org/'>DensePose</a> approach to estimate UV renders, that is mappings between pixel positions in image (source or target) space and texture space. Once source image is mapped into the texture space, full texture is estimated and then warped onto the target space to be refined. Thus, the pipeline consists of two convolutional networks: inpainter <i>f</i> that reconstructs full texture from a partially visible one, while refiner <i>g</i> processes warped onto the target space texture to generate new view. 
         <br>
         <br>
-        The main novelty of the approach lies in the texture estimation  part. 
-        Rather than working directly withcolors  of  texture  elements,  <b>the  inpainting  network  works with coordinates of the texture elements in the source view</b>. Hence, <b>it learns to employ natural symmetries of human body</b> to restore missing texture parts (i.e. to use pixels located at the position of left eye to hallucinate right one), therefore making resulting textures sharper and more detailed in comparison to color-based inpainting.
+        The main novelty of the approach lies in the texture estimation part. 
+        Rather than working directly with colors of texture elements, <b>the inpainting network works with coordinates of the texture elements in the source view</b>. Hence, <b>it learns to employ natural symmetries of human body</b> to restore missing texture parts (i.e. to use pixels located at the position of left eye to hallucinate right one), therefore making resulting textures sharper and more detailed in comparison to color-based inpainting.
     </p>
 <!--
     <iframe width="420" height="500"
         src="https://youtube.com/embed/vVALsewSzaU" allowfullscreen>
     </iframe>
 -->
-    <img src="files/idea.gif" title="stub" width='90%'/>
+    <img src="files/idea.gif" width='90%'/>
       <!-- </div> -->
     </div>
     
@@ -374,7 +376,7 @@ permalink: /neuralavatar
     <div class="section_title">Comparison with other methods</div>
 
     <p align="justify">
-        To evaluate our method we used <a href=http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html>Deepfashion</a> dataset and same data splits used in other  state-os-the-art works (<a href='http://densepose.org/'>1</a>,<a href=https://github.com/AliaksandrSiarohin/pose-gan>2</a>) consisting of 140,110 training and 8,670 test pairs, where each part is two images of same person in different poses. Below you can see qualitative comparison of our method to other works.
+        To evaluate our method we used <a href=http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html>Deepfashion</a> dataset and same data splits as in other state-of-the-art works (<a href='http://densepose.org/'>1</a>,<a href=https://github.com/AliaksandrSiarohin/pose-gan>2</a>) consisting of 140,110 training and 8,670 test pairs, where each part is two images of same person in different poses. Below you can see qualitative comparison of our method to the other works.
     </p>
     <br>
 
@@ -427,7 +429,7 @@ permalink: /neuralavatar
     <div class="section_title">Garment Transfer</div>
         
     <p align="justify"> <!-- style="text-indent: 30px" -->
-        By slightly modifying our pipeline, we can use it as a virtual try-on system. Here along with warped onto target space texture we pass masked ground truth of the target image into refiner <it>g</it> (revealing only face and hair). The modifyed network has quickly learned to copy revealed areas to the predicted image while seamlessly merging it with remaining body.
+        By slightly modifying our pipeline, we can use it as a garment transfer (virtual try-on) system. Here along with warped onto target space texture we pass masked ground truth of the target image into refiner <it>g</it> (revealing only face and hair). The modifyed network has quickly learned to copy revealed areas to the predicted image while seamlessly merging it with remaining body.
         <br>
         Choose model and cloth images in the scrollbars below to see the result of virtual try-on. 
     </p>

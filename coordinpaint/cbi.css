@@ -313,6 +313,7 @@ iframe {
   float: left;
   width: 33.33%;
   padding: 5px;
+  font-size: 1.0em;
 }
 
 .column_out {
@@ -442,5 +443,16 @@ th, td {
     vertical-align: top;
     text-align: center;
 }
+/*
+
+@media (max-width: @screen-xs) {
+    .column{font-size: 10px;}
+}
+
+@media (max-width: @screen-sm) {
+    .column{font-size: 14px;}
+}
+*/
+
 
 
