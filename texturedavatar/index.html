@@ -277,7 +277,7 @@ iframe {
 
 .hint {
   color: #A00;
-  font-size: 10pt;
+  font-size: 12pt;
   margin-bottom: 10px;
   margin-top: 7px;
 }
@@ -318,8 +318,8 @@ iframe {
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <title>Textured Neural Avatar</title>
-      <meta property="og:image" content="https://raw.githubusercontent.com/DmitryUlyanov/deep-image-prior/master/data/teaser_compiled.jpg"/>
-      <meta property="og:title" content="Deep Image Prior" />
+      <meta property="og:image" content="https://raw.githubusercontent.com/saic-violet/saic-violet.github.io/master/texturedavatar/files/1.jpg"/>
+      <meta property="og:title" content="Textured Neural Avatars" />
 
       <!-- Latest compiled and minified CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -395,7 +395,7 @@ iframe {
     <!-- ===================== TITLE ========================== -->
     <!-- ====================================================== -->
     <center>
-          <div class="title">Textured Neural Avatar</div>
+          <div class="title">Textured Neural Avatars</div>
     </center>
    
 
@@ -521,9 +521,9 @@ iframe {
     <div class="row section center row-eq-height">
       <div class="col center col-sm-15" style="margin-top: 10px">
           <center>
-          <img src="files/1.png" class="img-responsive"/>
+          <img src="files/1.jpg" class="img-responsive"/>
           </center>
-        <span style="font-size:15px"><i>We propose a new model for neural rendering of humans. The model is trained for a single person and can produce renderings of this person from <b>novel viewpoint</b> (top) or in the <b>new body pose</b> (bottom) unseen during training</i>.
+        <span style="font-size:17px"><i>We propose a new model for neural rendering of humans. The model is trained for a single person and can produce renderings of this person from <b>novel viewpoint</b> (top) or in the <b>new body pose</b> (bottom) unseen during training</i>.
         </span>
       </div>
     </div>
@@ -540,7 +540,8 @@ iframe {
       <!-- <div class="col-xs-8 col-xs-offset-2 text-justify"> -->
       <div class="section_title">Abstract</div>
       <p align="justify"> <!-- style="text-indent: 30px" -->
-        We present a system for learning full body <b>neural avatars</b>, i.e. deep networks that produce full body renderings of a person for varying body pose and camera position. Our system takes the middle path between the classical graphics pipeline and the recent deep learning approaches that generate images of humans using image-to-image translation. In particular, our system estimates an explicit two-dimensional texture map of the model surface. At the same time, it abstains from explicit shape modeling in 3D. Instead, at test time, the system uses a fully-convolutional network to directly map a set of body feature points w.r.t. the camera  to the 2D texture coordinates of individual pixels in the image frame. We show that such system  is capable of generating realistic renderings while being trained on videos annotated with 3D poses and foreground masks. We also demonstrate that <b>maintaining an explicit texture representation helps our system to achieve better generalization</b> compared to systems that use direct image-to-image translation.
+        <span style="font-size:18px">We present a system for learning full body <b>neural avatars</b>, i.e. deep networks that produce full body renderings of a person for varying body pose and camera position. Our system takes the middle path between the classical graphics pipeline and the recent deep learning approaches that generate images of humans using image-to-image translation. In particular, our system estimates an explicit two-dimensional texture map of the model surface. At the same time, it abstains from explicit shape modeling in 3D. Instead, at test time, the system uses a fully-convolutional network to directly map a set of body feature points w.r.t. the camera  to the 2D texture coordinates of individual pixels in the image frame. We show that such system  is capable of generating realistic renderings while being trained on videos annotated with 3D poses and foreground masks. We also demonstrate that <b>maintaining an explicit texture representation helps our system to achieve better generalization</b> compared to systems that use direct image-to-image translation.
+        </span>
       </p>
       <!-- </div> -->
     </div>
@@ -548,26 +549,26 @@ iframe {
 
     <center>
     <div class="row section" style="margin-bottom: -12px">
-      <div class="col-sm-10 col-sm-offset-1">
+      <!-- <div class="col-sm-10 col-sm-offset-1"> -->
       <!-- <div class="col-sm-12 center"> -->
-        <div class="col-sm-5" style="margin-bottom: 12px">
+        <!-- <div class="col-sm-5" style="margin-bottom: 12px"> -->
           <!-- <div class="col-sm-12"> -->
             <a href="https://www.google.com">
                 <img src="files/pdf.svg" class="img_links img-responsive">
                 <div class="author">Paper</div>
             </a>
           <!-- </div> -->
-        </div>
-        <div class="col-sm-7" style="margin-bottom: 12px">
+        <!-- </div> -->
+        <!-- <div class="col-sm-7" style="margin-bottom: 12px"> -->
           <!-- <div class="col-sm-12"> -->
-            <a href="https://www.google.com">
-                <img src="files/video.png" class="img_links img-responsive" >
-                <div class="author">Supmat</div>
-            </a>
+            <!-- <a href="https://www.google.com"> -->
+                <!-- <img src="files/video.png" class="img_links img-responsive" > -->
+                <!-- <div class="author">Supmat</div> -->
+            <!-- </a> -->
           <!-- </div> -->
-        </div>
+        <!-- </div> -->
       <!-- </div> -->
-    </div>
+    <!-- </div> -->
   </div>
   </center>
 
@@ -588,17 +589,21 @@ iframe {
       <!-- <div class="col-xs-8 col-xs-offset-2 text-justify"> -->
       <div class="section_title">Main idea</div>
       <p align="justify"> <!-- style="text-indent: 30px" -->
+       <span style="font-size:18px">
         We present a <b>neural avatar</b> system that does full body rendering and combines ideas from the classical computer graphics, namely the <b>decoupling of geometry and texture</b>, with the use of deep convolutional neural networks. In particular, similarly to the classic pipeline, our system explicitly estimates the 2D textures of body parts. 
         <!-- The 2D texture within the classical pipeline effectively transfers the appearance of the body fragments across camera transformations and body articulations.  -->
         Keeping this component within the neural pipeline <b>boosts generalization</b> across camera positions and body movement. The role of the convolutional network in our approach is only confined to predicting warping from texture to output image.
+        </span>
       </p>
 
       <p align="justify">
+      <span style="font-size:18px">
       In general, we are interested in <b>synthesizing RGB images of a certain person</b> given his/her pose. The input pose is defined as a stack of "bone" rasterizations (one bone per channel). The input is processed by the fully-convolutional network to produce <b>body part assignment map stack</b> and <b>body part coordinate map stack</b>. These stacks are then used to sample the body texture maps at the locations prescribed by the part coordinate stack with the weights prescribed by the part assignment stack to produce the RGB image. In addition, the last body assignment stack map corresponds to the background probability. During learning, the mask and the RGB image are compared with ground truth and the resulting losses are backpropagated through the sampling operation into the fully-convolutional network and onto the texture, resulting in their updates. The <b>detailed scheme</b> of our method is illustrated below:
+      </span>
 
       <div class="col center col-sm-12" style="margin-bottom: 30px">
           <center>
-          <img src="files/neural_avatar_new-1.png" class="img-responsive" width=85%>
+          <img src="files/neural_avatar_new-1.jpg" class="img-responsive" width=85%>
           </center>
       </div>
       </p>
@@ -616,7 +621,9 @@ iframe {
     <div class="section_title">Comparison with other methods</div>
 
     <p align="justify">
+    <span style="font-size:18px">
       To estimate the efficacy of the proposed system we considered two baselines, against which our model is compared. As a first one, we use the <a href="https://tcwang0509.github.io/vid2vid/"><b>video-to-video system</b></a> (<i>V2V</i>). As a second one, we consider a more <b>direct ablation</b> (<i>Direct</i>), which has the same network architecture that predicts RGB color and mask directly, rather than via body part assignments/coordinates. The Direct system is trained using the same losses and according to the same protocol as ours. 
+      </span>
     </p>
 
     <center>
@@ -685,8 +692,8 @@ iframe {
     <div class="section_title">Finetuning</div>
 
     <center>
-          <img src="files/neural_avatar_external_sequences-1.png" class="img-responsive"/>
-          <span style="font-size:15px"><i>Results on external <b>monocular</b> sequences. In this scenario we transfer a trained model to a new person by fitting it to a <b>single video</b>. Rows 1-2: Comparison of avatars produced by <b>our</b> algorithm trained on sequences from <a href="https://arxiv.org/pdf/1808.01338.pdf">Alldieck et. al.</a> (<b>left</b>) and produced by <a href="https://arxiv.org/pdf/1808.01338.pdf">Alldieck et. al.</a> (<b>right</b>). Row 3: textured neural avatar from <a href="https://www.youtube.com/watch?v=LXO-jKksQkM">Youtube video</a></i>.
+          <img src="files/neural_avatar_external_sequences-1.jpg" class="img-responsive"/>
+          <span style="font-size:17px"><i>Results on external <b>monocular</b> sequences. In this scenario we transfer a trained model to a new person by fitting it to a <b>single video</b>. Rows 1-2: Comparison of avatars produced by <b>our</b> algorithm trained on sequences from <a href="https://arxiv.org/pdf/1808.01338.pdf">Alldieck et. al.</a> (<b>left</b>) and produced by <a href="https://arxiv.org/pdf/1808.01338.pdf">Alldieck et. al.</a> (<b>right</b>). Row 3: textured neural avatar from <a href="https://www.youtube.com/watch?v=LXO-jKksQkM">Youtube video</a></i>.
     </center>
 
     
