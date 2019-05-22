@@ -22,8 +22,10 @@ function inset_image(col, imfile){
         newimg = document.createElement("img")
 //        console.log(imfile)
         newimg.src = imfile
-        newimg.style = "width:100%"
-        newimg.className = "image_sbs img-fluid img-thumbnail"
+        newimg.style = "width:160%"
+        newimg.className = "crop"
+//        newimg.className = "image_sbs crop"
+//        newimg.className = "image_sbs img-fluid img-thumbnail crop"
         col.appendChild(newimg)
     } else {
         img.attr('src', imfile)
@@ -40,7 +42,7 @@ function fill_row(row, id){
     if (cols._groups[0].length == 0) {
         let cols = Array.from({ length: n_cols }, (_, k) => document.createElement("div"));
         for(let i=0; i < cols.length; i++) {
-            cols[i].className = "column_sbs";
+            cols[i].className = "column_sbs col";
             row.appendChild(cols[i]);    
         }
 
@@ -164,6 +166,8 @@ butcont = d3.select('.button_row').selectAll('div')
                                 .on('click', function(d){
                                     button_change(d, timerId)
                                 })
+
+
 
 
 
