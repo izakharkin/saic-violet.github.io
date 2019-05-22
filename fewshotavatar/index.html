@@ -1,1 +1,301 @@
-Hello, world!
+<!DOCTYPE html>
+<html>
+<title>Few-shot Learning of Neural Talking Head Models</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/w3images/mac.jpg");
+  min-height: 100%;
+}
+
+.w3-img {
+  padding: 4px;
+}
+
+.iframe-container {
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+}
+ 
+.iframe-container iframe {
+   border: 0;
+   height: 100%;
+   left: 0;
+   position: absolute;
+   top: 4px;
+   width: 100%;
+}
+
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <!-- <a href="#home" class="w3-bar-item w3-button w3-wide">LOGO</a> -->
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#home" class="w3-bar-item w3-button">Home</a>
+      <a href="#abstract" class="w3-bar-item w3-button">Abstract</a>
+      <a href="#video" class="w3-bar-item w3-button">Video</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button">Home</a>
+  <a href="#abstract" onclick="w3_close()" class="w3-bar-item w3-button">Abstract</a>
+  <a href="#video" onclick="w3_close()" class="w3-bar-item w3-button">Video</a>
+  <a href="#links" onclick="w3_close()" class="w3-bar-item w3-button">Links</a>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-padding-64" id="home">
+  <div class="w3-row w3-text-black w3-padding-4">
+    <div class="w3-col s1 m1 l1">&nbsp;</div>
+    <div class="w3-col s10 m10 l10 w3-center">
+      <span class="w3-xxlarge w3-hide-medium w3-hide-small" style="font-size:4.310vw !important">Few-Shot Adversarial Learning of</span>
+      <span class="w3-xxlarge w3-hide-large w3-hide-small"  style="font-size:5.300vw !important">Few-Shot Adversarial Learning of</span>
+      <span class="w3-xlarge w3-hide-large w3-hide-medium">Few-Shot Adversarial Learning of</span>
+      </br>
+      <span class="w3-xxlarge w3-hide-medium w3-hide-small" style="font-size:3.862vw !important">Realistic Neural Talking Head models</span>
+      <span class="w3-xxlarge w3-hide-large w3-hide-small"  style="font-size:4.724vw !important">Realistic Neural Talking Head models</span>
+      <span class="w3-xlarge w3-hide-large w3-hide-medium">Realistic Neural Talking Head models</span>
+    </div>
+    <div class="w3-col s1 m1 l1">&nbsp;</div>
+  </div>
+  <div class="w3-row w3-text-black w3-padding-2 w3-hide-small">&nbsp;</div>
+  <div class="w3-row w3-text-black">
+    <div class="w3-hide-small w3-col s0 m1 l2">&nbsp;</div>
+    <div class="w3-col s3 m2 l2 w3-left-align">
+      <span class="w3-large w3-hide-medium w3-hide-small" style="font-size:1.5vw !important">Egor Zakharov<sup>1,2</sup></span>
+      <span class="w3-medium w3-hide-large w3-hide-small" style="font-size:1.8vw !important">Egor Zakharov<sup>1,2</sup></span>
+      <span class="w3-small w3-hide-large w3-hide-medium">Egor Zakharov<sup>1,2</sup></span>
+    </div>
+    <div class="w3-col s3 m3 l2 w3-center">
+      <span class="w3-large w3-hide-medium w3-hide-small" style="font-size:1.5vw !important">Aliaksandra Shysheya<sup>1,2</sup></span>
+      <span class="w3-medium w3-hide-large w3-hide-small" style="font-size:1.8vw !important">Aliaksandra Shysheya<sup>1,2</sup></span>
+      <span class="w3-small w3-hide-large w3-hide-medium">Aliaksandra Shysheya<sup>1,2</sup></span>
+    </div>
+    <div class="w3-col s3 m3 l2 w3-center">
+      <span class="w3-large w3-hide-medium w3-hide-small" style="font-size:1.5vw !important">Egor Burkov<sup>1,2</sup></span>
+      <span class="w3-medium w3-hide-large w3-hide-small" style="font-size:1.8vw !important">Egor Burkov<sup>1,2</sup></span>
+      <span class="w3-small w3-hide-large w3-hide-medium">Egor Burkov<sup>1,2</sup></span>
+    </div>
+    <div class="w3-col s3 m2 l2 w3-right-align">
+      <span class="w3-large w3-hide-medium w3-hide-small" style="font-size:1.5vw !important">Victor Lempitsky<sup>1,2</sup></span>
+      <span class="w3-medium w3-hide-large w3-hide-small" style="font-size:1.8vw !important">Victor Lempitsky<sup>1,2</sup></span>
+      <span class="w3-small w3-hide-large w3-hide-medium">Victor Lempitsky<sup>1,2</sup></span>
+    </div>
+    <div class="w3-hide-small w3-col s0 m1 l2">&nbsp;</div>
+  </div>
+  <div class="w3-row w3-text-black w3-padding-2 w3-hide-small">&nbsp;</div>
+  <div class="w3-row w3-text-black">
+    <div class="w3-hide-small w3-col s0 m1 l2">&nbsp;</div>
+    <div class="w3-col s5 m4 l3 w3-left-align">
+      <span class="w3-large w3-hide-medium w3-hide-small" style="font-size:1.5vw !important">Samsung AI Center Moscow<sup>1</sup></span>
+      <span class="w3-medium w3-hide-large w3-hide-small" style="font-size:1.8vw !important">Samsung AI Center Moscow<sup>1</sup></span>
+      <span class="w3-small w3-hide-large w3-hide-medium">Samsung AI Center Moscow<sup>1</sup></span>
+    </div>
+    <div class="w3-col s7 m6 l5 w3-right-align">
+      <span class="w3-large w3-hide-medium w3-hide-small" style="font-size:1.5vw !important">Skolkovo Institute of Science and Technology<sup>2</sup></span>
+      <span class="w3-medium w3-hide-large w3-hide-small" style="font-size:1.8vw !important">Skolkovo Institute of Science and Technology<sup>2</sup></span>
+      <span class="w3-small w3-hide-large w3-hide-medium">Skolkovo Institute of Science and Technology<sup>2</sup></span>
+    </div>
+    <div class="w3-hide-small w3-col s0 m1 l2">&nbsp;</div>
+  </div>
+  <div class="w3-row w3-text-black w3-hide-small w3-padding-4">&nbsp;</div>
+  <div class="w3-row w3-text-black w3-hide-small">
+    <div class="w3-col m1 l2">&nbsp;</div>
+    <div class="w3-col m2 l1 w3-center w3-img">
+      <img style="width: 100%" src="assets/teaser/0_source.jpg">
+    </div>
+    <div class="w3-col m2 l1 w3-center w3-img">
+      <img style="width: 100%" src="assets/teaser/0_0.jpg">
+    </div>
+    <div class="w3-col m2 l1 w3-center w3-img">
+      <img style="width: 100%" src="assets/teaser/0_1.jpg">
+    </div>
+    <div class="w3-col m2 l1 w3-center w3-img">
+      <img style="width: 100%" src="assets/teaser/0_2.jpg">
+    </div>
+    <div class="w3-col m2 l1 w3-center w3-img">
+      <img style="width: 100%" src="assets/teaser/0_3.jpg">
+    </div>
+    <div class="w3-col m1 l1 w3-center w3-img w3-hide-medium">
+      <img style="width: 100%" src="assets/teaser/0_4.jpg">
+    </div>
+    <div class="w3-col m1 l1 w3-center w3-img w3-hide-medium">
+      <img style="width: 100%" src="assets/teaser/0_5.jpg">
+    </div>
+    <div class="w3-col m1 l1 w3-center w3-img w3-hide-medium">
+      <img style="width: 100%" src="assets/teaser/0_6.jpg">
+    </div>
+    <div class="w3-col m1 l2">&nbsp;</div>
+  </div>
+  <div class="w3-row w3-text-black w3-hide-small">
+    <div class="w3-col m1 l2">&nbsp;</div>
+    <div class="w3-col m2 l1 w3-center w3-img">
+      <img style="width: 100%" src="assets/teaser/1_source.jpg">
+    </div>
+    <div class="w3-col m2 l1 w3-center w3-img">
+      <img style="width: 100%" src="assets/teaser/1_0.jpg">
+    </div>
+    <div class="w3-col m2 l1 w3-center w3-img">
+      <img style="width: 100%" src="assets/teaser/1_1.jpg">
+    </div>
+    <div class="w3-col m2 l1 w3-center w3-img">
+      <img style="width: 100%" src="assets/teaser/1_2.jpg">
+    </div>
+    <div class="w3-col m2 l1 w3-center w3-img">
+      <img style="width: 100%" src="assets/teaser/1_3.jpg">
+    </div>
+    <div class="w3-col m1 l1 w3-center w3-img w3-hide-medium">
+      <img style="width: 100%" src="assets/teaser/1_4.jpg">
+    </div>
+    <div class="w3-col m1 l1 w3-center w3-img w3-hide-medium">
+      <img style="width: 100%" src="assets/teaser/1_5.jpg">
+    </div>
+    <div class="w3-col m1 l1 w3-center w3-img w3-hide-medium">
+      <img style="width: 100%" src="assets/teaser/1_6.jpg">
+    </div>
+    <div class="w3-col m1 l2">&nbsp;</div>
+  </div>
+  <div class="w3-row w3-text-black w3-hide-small">
+    <div class="w3-col m1 l2">&nbsp;</div>
+    <div class="w3-col m2 l1 w3-center">
+      <span class="w3-large">Source</span>
+    </div>
+    <div class="w3-col m8 l7 w3-center">
+      <span class="w3-large">Generated images</span>
+    </div>
+    <div class="w3-col m1 l2">&nbsp;</div>
+  </div>
+  <div class="w3-row w3-text-black w3-hide-small w3-padding-4">&nbsp;</div>
+  <div class="w3-row w3-text-black w3-hide-small w3-padding-4">
+    <div class="w3-col m1 l2">&nbsp;</div>
+    <div class="w3-col s10 m10 l8 w3-justify">
+        <span class="w3-large">Figure 1: Our results in <b>eight-shot</b> mode on people not seen during meta-learning. The leftmost photograph shows <b>one of the eight images</b>, taken from the same video sequence, that were shown to the system. The remaining photographs show images <b>generated</b> by our model for face landmarks taken from the different video of the same person.</span>
+    </div>
+    <div class="w3-col m1 l2">&nbsp;</div>
+  </div>
+  <div class="w3-row w3-text-black w3-hide-small w3-padding-32">
+    <div class="w3-col m1 l2">&nbsp;</div>
+    <div class="w3-col s10 m10 l8 w3-justify">
+        <a href="https://arxiv.org/abs/1905.08233v1"><span class="w3-xlarge">Link to the paper</span></a>
+    </div>
+    <div class="w3-col m1 l2">&nbsp;</div>
+  </div>
+  <div class="w3-row w3-text-black w3-hide-small w3-padding-4">
+    <div class="w3-col m1 l2">&nbsp;</div>
+    <div class="w3-col s10 m10 l8 w3-justify">
+      <span class="w3-xlarge">BibTex</span>
+      <br>
+      <code>
+      	<pre>
+@online{Zakharov19,
+    title={Few-Shot Adversarial Learning of Realistic Neural Talking Head Models},
+    author={Egor Zakharov and Aliaksandra Shysheya and Egor Burkov and Victor Lempitsky},
+    year={2019},
+    eprint={1905.08233},
+    eprinttype={arXiv}
+}</pre>
+			</code>
+    </div>
+    <div class="w3-col m1 l2">&nbsp;</div>
+  </div>
+</header>
+
+<!-- Abstract Section -->
+<div class="bgimg-1 w3-padding-64" id="abstract">
+  <div class="w3-row w3-text-black w3-padding-16">
+    <div class="w3-col s1 m1 l2">&nbsp;</div>
+    <div class="w3-col s10 m10 l8 w3-left-align">
+      <span class="w3-xxlarge" >Abstract</span>
+    </div>
+    <div class="w3-col s1 m1 l2">&nbsp;</div>
+  </div>
+  <div class="w3-row w3-text-black w3-padding-4">
+    <div class="w3-col s1 m1 l2">&nbsp;</div>
+    <div class="w3-col s10 m10 l8 w3-justify">
+        <span class="w3-large">Generation of photo-realistic human head images is a challenging task, which several recent works have addressed via training on datasets that include a large number of images of the same person. However, many practical scenarios require such talking head models to be learned in a <b>few-shot</b>, or even <b>one-shot</b> setting, when only a single image of a person is available. In this work, we present a system with such capability. It performs lengthy <b>meta-learning</b> on a large dataset of videos, and after that is able to frame few- and one-shot learning tasks for previously unseen people as <b>adversarial training problems</b> with <b>high capacity</b> generator and discriminator. Crucially, the system is able to initialize the parameters of both the generator and the discriminator in a person-specific way, so that <b>training</b> can be based on just <b>a few images</b> and <b>done quickly</b>, despite the need to tune tens of millions of parameters and the fact that the person has never been seen in the meta-learning stage. We show that such an approach is able to learn <b>highly realistic and personalized</b> talking head models.</span>
+    </div>
+    <div class="w3-col s1 m1 l2">&nbsp;</div>
+  </div>
+  <div class="w3-row w3-text-black w3-hide-small w3-padding-4">&nbsp;</div>
+  <div class="w3-row w3-text-black w3-padding-4">
+    <div class="w3-col m1 l2">&nbsp;</div>
+    <div class="w3-col m10 l8 w3-center w3-img">
+      <img style="width: 100%" src="assets/scheme.jpg">
+    </div>
+    <div class="w3-col m1 l2">&nbsp;</div>
+  </div>
+  <div class="w3-row w3-text-black w3-hide-small w3-padding-4">&nbsp;</div>
+  <div class="w3-row w3-text-black w3-hide-small">
+    <div class="w3-col m1 l2">&nbsp;</div>
+    <div class="w3-col s10 m10 l8 w3-justify">
+        <span class="w3-large">Figure 2: Our meta-learning architecture involves <b>an embedding network</b>, that maps a set of head images (with estimated face landmarks) to <b>the embedding vector space</b>, where these vectors are averaged to produce a single embedding vector. The embedding vector is then <b>projected</b> by a linear layer into <b>a subset of parameters</b>, which are assigned to <b>the generator network</b>. The generator network maps the input face landmarks into output frames through the set of convolutional layers. During meta-learning, we use sets of frames from the same video. Several frames are used to compute the embedding, and a stand-alone frame is used as ground truth for training. Our objective loss includes <b>perceptual and adversarial losses</b> (the latter is implemented as a conditional projection discriminator).</span>
+    </div>
+    <div class="w3-col m1 l2">&nbsp;</div>
+  </div>
+</div>
+
+<!-- Video Section -->
+<div class="bgimg-1  w3-padding-64" id="video">
+  <div class="w3-row w3-text-black w3-padding-16">
+    <div class="w3-col s1 m1 l2">&nbsp;</div>
+    <div class="w3-col s10 m10 l8 w3-left-align">
+      <span class="w3-xxlarge" >Video</span>
+    </div>
+    <div class="w3-col s1 m1 l2">&nbsp;</div>
+  </div>
+  <div class="w3-row w3-text-black w3-padding-4">
+    <div class="w3-col s1 m1 l2">&nbsp;</div>
+    <div class="w3-col s10 m10 l8 w3-justify">
+      <div class="iframe-container">
+      	<iframe src="https://www.youtube.com/embed/p1b5aiTrGzY" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="w3-col s1 m1 l2">&nbsp;</div>
+  </div>
+  <div class="w3-row w3-text-black w3-padding-32">
+    <div class="w3-col s1 m1 l2">&nbsp;</div>
+    <div class="w3-col s10 m10 l8 w3-justify">
+        <span class="w3-large">We present the <b>few-shot</b> learning results from <b>one</b>, <b>eight</b> and <b>32 frames</b> on the VoxCeleb2 test set. We also show the effect fine-tuning has on the final results, as well as highlight key features of our model's architecture and its capabilities. We also show the results of applying our model in the wild: we create <b>talking heads from our selfies</b>, as well as apply it to <b>paintings and photographs</b> by creating <b>puppeteering</b> video sequences.</span>
+    </div>
+    <div class="w3-col s1 m1 l2">&nbsp;</div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+</footer>
+
+</body>
+</html>
