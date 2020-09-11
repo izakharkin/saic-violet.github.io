@@ -697,12 +697,12 @@
     <p></p>
     <div class="row">
       <div class="col-sm-12 video_class">
-        <video width="100%" muted="" controls="" loop="" playsinline autoplay autobuffer preload="metadata" poster="">
+        <video id="aquarium" width="100%" muted="" controls="" loop="" preload="metadata" poster="">
           <source src="assets/transpr/videos/aquarium.mp4" type="video/mp4">
         </video>
       </div>
       <div class="col-sm-12 video_class">
-        <video width="100%" muted="" controls="" loop="" playsinline autoplay autobuffer preload="metadata" poster="">
+        <video id="static_smoke" width="100%" muted="" controls="" loop="" preload="metadata" poster="">
           <source src="assets/transpr/videos/static_smoke.mp4" type="video/mp4">
         </video>
       </div>
@@ -767,7 +767,7 @@
     
       <p></p>
         <div class="col-sm-12 video_class">
-          <video width="100%" muted="" controls="" loop="" playsinline autoplay autobuffer preload="metadata" poster="">
+          <video id="dyn_smoke"  width="100%" muted="" controls="" loop="" preload="metadata" poster="">
             <source src="assets/transpr/videos/dyn_smoke.mp4" type="video/mp4">
           </video>
         </div>
@@ -794,7 +794,7 @@
 
           <div class="col-sm-4 col-sm-offset-2">
             <div class="">
-              <video height="50%" muted="" controls="" loop="" playsinline autoplay autobuffer preload="metadata" poster="">
+              <video id="orig_gt" height="50%" muted="" controls="" loop="" preload="metadata" poster="">
                 <source src="assets/transpr/videos/orig_gt.mp4" type="video/mp4">
               </video>
             </div>
@@ -802,7 +802,7 @@
           </div>
           <div class="col-sm-4">
             <div class="">
-              <video height="50%" muted="" controls="" loop="" playsinline autoplay autobuffer preload="metadata" poster="">
+              <video id="checkerboard_gt" height="50%" muted="" controls="" loop="" preload="metadata" poster="">
                 <source src="assets/transpr/videos/checkerboard_gt.mp4" type="video/mp4">
               </video>
             </div>
@@ -811,7 +811,7 @@
       
       <p></p>
         <div class="col-sm-12 video_class">
-          <video width="100%" muted="" controls="" loop="" playsinline autoplay autobuffer preload="metadata" poster="">
+          <video id="flowers" width="100%" muted="" controls="" loop="" preload="metadata" poster="">
             <source src="assets/transpr/videos/flowers.mp4" type="video/mp4">
           </video>
         </div>
@@ -829,12 +829,12 @@
       
       <p></p>
         <div class="col-sm-12 video_class">
-          <video width="100%" muted="" controls="" loop="" playsinline autoplay autobuffer preload="metadata" poster="">
+          <video id="scarf_table" width="100%" muted="" controls="" loop="" preload="metadata" poster="">
             <source src="assets/transpr/videos/scarf_table.mp4" type="video/mp4">
           </video>
         </div>
         <div class="col-sm-12 video_class">
-          <video width="100%" muted="" controls="" loop="" playsinline autoplay autobuffer preload="metadata" poster="">
+          <video id="scarf_and_shirt" width="100%" muted="" controls="" loop="" preload="metadata" poster="">
             <source src="assets/transpr/videos/scarf_and_shirt.mp4" type="video/mp4">
           </video>
         </div>
@@ -850,19 +850,19 @@
     <p>We show how TRANSPR extends the scene editing scenario originally proposed in NPBG with added or altered 
       transparency allowing to jointly render synthetic and real-world assets. </p>
         <div class="col-sm-12 video_class">
-          <video width="100%" muted="" controls="" loop="" playsinline autoplay autobuffer preload="metadata" poster="">
+          <video id="aloe_smoke" width="100%" muted="" controls="" loop="" preload="metadata" poster="">
             <source src="assets/transpr/videos/aloe_smoke.mp4" type="video/mp4">
           </video>
         </div>
         <p></p><br>
         <div class="col-sm-12 video_class">
-          <video width="100%" muted="" controls="" loop="" playsinline autoplay autobuffer preload="metadata" poster="">
+          <video id="jewelry_smoke" width="100%" muted="" controls="" loop="" preload="metadata" poster=""> <!-- playsinline autoplay autobuffer -->
             <source src="assets/transpr/videos/jewelry_smoke.mp4" type="video/mp4">
           </video>
         </div>
         <p></p><br>
         <div class="col-sm-12 video_class">
-          <video width="100%" muted="" controls="" loop="" playsinline autoplay autobuffer preload="metadata" poster="">
+          <video id="church" width="100%" muted="" controls="" loop=""preload="metadata" poster="">
             <source src="assets/transpr/videos/church.mp4" type="video/mp4">
           </video>
         </div>
@@ -890,7 +890,6 @@
     <p></p><br>
     <p></p><br>
   </div>
-
   
 
   <!-- Optional JavaScript -->
@@ -934,6 +933,22 @@
       //   console.log(3);
       //   change_height_cf(document.getElementById("lastimage"));
       // };
+
+      var screenWidth = $(window).width();
+      console.log(screenWidth);
+      if (screenWidth >= 800) {
+        $('#aquarium').attr('autoplay', 'autoplay');
+        $('#static_smoke').attr('autoplay', 'autoplay');
+        $('#dyn_smoke').attr('autoplay', 'autoplay');
+        $('#orig_gt').attr('autoplay', 'autoplay');
+        $('#checkerboard_gt').attr('autoplay', 'autoplay');
+        $('#flowers').attr('autoplay', 'autoplay');
+        $('#scarf_table').attr('autoplay', 'autoplay');
+        $('#scarf_and_shirt').attr('autoplay', 'autoplay');
+        $('#aloe_smoke').attr('autoplay', 'autoplay');
+        $('#jewelry_smoke').attr('autoplay', 'autoplay');
+        $('#church').attr('autoplay', 'autoplay');
+      }
 
     });
 
