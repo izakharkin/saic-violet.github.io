@@ -515,8 +515,7 @@
 
           <div class="col-sm-4" style="margin-bottom: 10px">
             <!-- <div class="col-sm-12"> -->
-            <a href="https://github.com/mvkolo+
-            s">
+            <a href="https://github.com/mvkolos">
               <img src="assets/projects/maria_kolos_600p.JPG" class="shadow img_authors img-circle img-responsive" width="100" height="100">
               <div class="author"><span style="font-weight: 600">Maria Kolos*</span><br>Samsung AI</div>
             </a>
@@ -630,7 +629,7 @@
       <div class="row section">
         <center>
           <!-- <img src="assets/transpr/transpr_scheme.svg" width="70%">   -->
-          <img src="assets/transpr/transpr_scheme.png" width="70%">  
+          <img src="assets/transpr/transpr_scheme.png" width="80%">  
         </center>
       </div>
 
@@ -697,14 +696,16 @@
     <p></p>
     <div class="row">
       <div class="col-sm-12 ">
-        <video id="aquarium" width="100%" muted="" controls="" loop="" preload="metadata" poster="">
-          <source src="assets/transpr/videos/aquarium.mp4" type="video/mp4">
-        </video>
+        <!-- <source src="assets/transpr/videos/aquarium.mp4" type="video/mp4"> --> <!-- https://youtu.be/d9VbmMPyfNI -->
+          <iframe width="100%" height="40%" src="https://www.youtube.com/embed/d9VbmMPyfNI?playlist=d9VbmMPyfNI&autoplay=1&mute=1&loop=1" allowfullscreen="1" frameborder="0"></iframe>
+          <i>Setting the highest quality is recommended. Original video: <a href="assets/transpr/videos/aquarium.mp4">aquarium.mp4</a>.</i>
+          <p></p><br>
       </div>
       <div class="col-sm-12 ">
-        <video id="static_smoke" width="100%" muted="" controls="" loop="" preload="metadata" poster="">
-          <source src="assets/transpr/videos/static_smoke.mp4" type="video/mp4">
-        </video>
+          <!-- <source src="assets/transpr/videos/static_smoke.mp4" type="video/mp4"> --> <!-- https://youtu.be/Lq9lcOxtcDQ -->
+          <iframe width="100%" height="40%" src="https://www.youtube.com/embed/Lq9lcOxtcDQ?playlist=Lq9lcOxtcDQ&autoplay=1&mute=1&loop=1" allowfullscreen="1" frameborder="0"></iframe>
+          <i>Setting the highest quality is recommended. Original video: <a href="assets/transpr/videos/static_smoke.mp4">static_smoke.mp4</a>.</i>
+          <p></p><br>
       </div>
     </div>
     <p></p>
@@ -761,16 +762,16 @@
     <div class="row section text-justify">
         <div class="section_title">Dynamic rendering</div>
       
-      <!-- TODO add captions -->
       <p>We show how TRANSPR can model the dynamic behavior of smoke by interpolating descriptors for every second animation frame.</p>
       <p>Each animation frame was treated like a separate scene. TRANSPR linearly interpolates the descriptors, and Neural Volumes employes a view-conditioning strategy based on 3 nearest train cameras. The inferred NeRF images for the trained frames were linearly interpolated. The following demo showcases a single frame rendering, as well as the comparison with the ground truth.</p>
     
       <p></p>
         <div class="col-sm-12">
-          <video id="dyn_smoke"  width="100%" muted="" controls="" loop="" preload="metadata" poster="">
-            <source src="assets/transpr/videos/dyn_smoke.mp4" type="video/mp4">
-          </video>
-        </div>
+            <!-- <source src="assets/transpr/videos/dyn_smoke.mp4" type="video/mp4"> --> <!-- https://youtu.be/SXKBkmpKL_M -->
+              <iframe width="100%" height="40%" src="https://www.youtube.com/embed/SXKBkmpKL_M?playlist=SXKBkmpKL_M&autoplay=1&mute=1&loop=1" allowfullscreen="1" frameborder="0"></iframe>
+              <i>Setting the highest quality is recommended. Original video: <a href="assets/transpr/videos/dyn_smoke.mp4">dyn_smoke.mp4</a>.</i>
+              <p></p><br>
+          </div>
       <!-- <p></p>
         Neural Volumes naturally uses a view-conditioning strategy tied to 3 train cameras. The inferred NeRF images for the trained frames were linearly interpolated.
       </p> -->
@@ -790,32 +791,37 @@
           First, a 180° sequence of flowers in a transparent vase was captured as is. 
           Afterwards, the vase was wrapped into a paper with checkerboard pattern. 
           Finally, point clouds of each sequence were reconstructed and geometrically aligned. </p>
-      <p></p>
+      <p></p><br>
 
+        <div class="row">
           <div class="col-sm-4 col-sm-offset-2">
             <div class="">
               <video id="orig_gt" height="50%" muted="" controls="" loop="" preload="metadata" poster="">
-                <source src="assets/transpr/videos/orig_gt.mp4" type="video/mp4">
+                <source src="assets/transpr/videos/orig_gt.mp4" type="video/mp4"> <!-- -->
               </video>
             </div>
-            Sequence without wrapping
+            <i>Sequence without wrapping</i>
           </div>
           <div class="col-sm-4">
             <div class="">
               <video id="checkerboard_gt" height="50%" muted="" controls="" loop="" preload="metadata" poster="">
-                <source src="assets/transpr/videos/checkerboard_gt.mp4" type="video/mp4">
+                <source src="assets/transpr/videos/checkerboard_gt.mp4" type="video/mp4"> <!-- -->
               </video>
             </div>
-            Sequence with wrapping
+            <i>Sequence with wrapping</i>
           </div>
-      
-      <p></p>
-        <div class="col-sm-12">
-          <video id="flowers" width="100%" muted="" controls="" loop="" preload="metadata" poster="">
-            <!-- <source src="assets/transpr/videos/flowers.mp4" type="video/mp4"> -->
-            <source src="assets/transpr/videos/flowers.webm" type="video/mp4">
-          </video>
+          <p></p><br>
         </div>
+
+        <p></p><br>
+
+        <div class="col-sm-12">
+            <!-- <source src="assets/transpr/videos/flowers.mp4" type="video/mp4"> -->
+            <!-- <source src="assets/transpr/videos/flowers.webm" type="video/mp4"> -->    <!-- https://youtu.be/PuwzMoeZsJs -->
+            <iframe width="100%" height="40%" src="https://www.youtube.com/embed/PuwzMoeZsJs?playlist=PuwzMoeZsJs&autoplay=1&mute=1&loop=1" allowfullscreen="1" frameborder="0"></iframe>
+            <i>Setting the highest quality is recommended. Original video: <a href="assets/transpr/videos/flowers.mp4">flowers.mp4</a>.</i>
+            <p></p><br>
+          </div>
       <p></p>
     </div>
 
@@ -830,14 +836,16 @@
       
       <p></p>
         <div class="col-sm-12 ">
-          <video id="scarf_table" width="100%" muted="" controls="" loop="" preload="metadata" poster="">
-            <source src="assets/transpr/videos/scarf_table.mp4" type="video/mp4">
-          </video>
+            <!-- <source src="assets/transpr/videos/scarf_table.mp4" type="video/mp4"> --> <!-- https://youtu.be/yRULuTQHtEs -->
+            <iframe width="100%" height="40%" src="https://www.youtube.com/embed/yRULuTQHtEs?playlist=yRULuTQHtEs&autoplay=1&mute=1&loop=1" allowfullscreen="1" frameborder="0"></iframe>
+            <i>Setting the highest quality is recommended. Original video: <a href="assets/transpr/videos/scarf_table.mp4">scarf_table.mp4</a>.</i>
+            <p></p><br>
         </div>
         <div class="col-sm-12 ">
-          <video id="scarf_and_shirt" width="100%" muted="" controls="" loop="" preload="metadata" poster="">
-            <source src="assets/transpr/videos/scarf_and_shirt.mp4" type="video/mp4">
-          </video>
+            <!-- <source src="assets/transpr/videos/scarf_and_shirt.mp4" type="video/mp4"> --> <!-- https://youtu.be/TriDpJonxL0 -->
+            <iframe width="100%" height="40%" src="https://www.youtube.com/embed/TriDpJonxL0?playlist=TriDpJonxL0&autoplay=1&mute=1&loop=1" allowfullscreen="1" frameborder="0"></iframe>
+            <i>Setting the highest quality is recommended. Original video: <a href="assets/transpr/videos/scarf_and_shirt.mp4">scarf_and_shirt.mp4</a>.</i>
+            <p></p><br>
         </div>
       <p></p>
     </div>
@@ -851,21 +859,24 @@
     <p>We show how TRANSPR extends the scene editing scenario originally proposed in NPBG with added or altered 
       transparency allowing to jointly render synthetic and real-world assets. </p>
         <div class="col-sm-12 ">
-          <video id="aloe_smoke" width="100%" muted="" controls="" loop="" preload="metadata" poster="">
-            <source src="assets/transpr/videos/aloe_smoke.mp4" type="video/mp4">
-          </video>
+            <!-- <source src="assets/transpr/videos/aloe_smoke.mp4" type="video/mp4"> --> <!-- https://youtu.be/Ah2WW0DlQbw -->
+            <iframe width="100%" height="40%" src="https://www.youtube.com/embed/Ah2WW0DlQbw?playlist=Ah2WW0DlQbw&autoplay=1&mute=1&loop=1" allowfullscreen="1" frameborder="0"></iframe>
+            <i>Setting the highest quality is recommended. Original video: <a href="assets/transpr/videos/aloe_smoke.mp4">aloe_smoke.mp4</a>.</i>
+            <p></p><br>
         </div>
         <p></p><br>
         <div class="col-sm-12 ">
-          <video id="jewelry_smoke" width="100%" muted="" controls="" loop="" preload="metadata" poster=""> <!-- playsinline autoplay autobuffer -->
-            <source src="assets/transpr/videos/jewelry_smoke.mp4" type="video/mp4">
-          </video>
+            <!-- <source src="assets/transpr/videos/jewelry_smoke.mp4" type="video/mp4"> --> <!-- https://youtu.be/6PSYFpWqtG4 -->
+            <iframe width="100%" height="40%" src="https://www.youtube.com/embed/6PSYFpWqtG4?playlist=6PSYFpWqtG4&autoplay=1&mute=1&loop=1" allowfullscreen="1" frameborder="0"></iframe>
+            <i>Setting the highest quality is recommended. Original video: <a href="assets/transpr/videos/jewelry_smoke.mp4">jewelry_smoke.mp4</a>.</i>
+            <p></p><br>
         </div>
         <p></p><br>
         <div class="col-sm-12 ">
-          <video id="church" width="100%" muted="" controls="" loop="" preload="metadata" poster="">
-            <source src="assets/transpr/videos/church.mp4" type="video/mp4">
-          </video>
+            <!-- <source src="assets/transpr/videos/church.mp4" type="video/mp4"> --> <!-- https://youtu.be/0niEAalUbG8 -->
+            <iframe width="100%" height="40%" src="https://www.youtube.com/embed/0niEAalUbG8?playlist=0niEAalUbG8&autoplay=1&mute=1&loop=1" allowfullscreen="1" frameborder="0"></iframe>
+            <i>Setting the highest quality is recommended. Original video: <a href="assets/transpr/videos/church.mp4">church.mp4</a>.</i>
+            <p></p><br>
         </div>
     
       <p></p><br>
