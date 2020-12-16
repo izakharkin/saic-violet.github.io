@@ -66,7 +66,7 @@
      inkscape:window-x="67"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g1724" />
+     inkscape:current-layer="g1668" />
   <g
      id="g1724"
      style="enable-background:new"
@@ -2156,13 +2156,26 @@
            id="g1668">
           <text
              xml:space="preserve"
-             transform="translate(0,540)"
-             font-size="15.96"
-             id="text1666"
-             style="font-size:15.96000004px;font-family:SamsungOne"><tspan
-               y="-139.7"
-               x="620.5 630.36328 638.74231 643.6261 647.87146 656.88885 666.00201 672.09875 680.52563 689.51111 693.21381 701.35339 705.59875 713.97778 726.20312 733.52875 737.11975 746.08929 755.21838 764.20386 772.63074 778.88708 782.44617 791.5274 800.22559 808.36517 816.79205 821.67584 825.26685 833.40643 837.65179 846.03082 858.25616 867.24164 875.93982 880.10541 889.18665"
-               id="tspan1664">Relighted views under novel viewpoint</tspan></text>
+             style="font-style:normal;font-weight:normal;font-size:30px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+             x="739.92468"
+             y="398.40952"
+             id="text1761"><tspan
+               sodipodi:role="line"
+               id="tspan1759"
+               x="739.92468"
+               y="424.95248"
+               style="stroke-width:0.75" /></text>
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:30px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+             x="622.99829"
+             y="397.496"
+             id="text1765"><tspan
+               sodipodi:role="line"
+               id="tspan1763"
+               x="622.99829"
+               y="397.496"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:SamsungOne;-inkscape-font-specification:SamsungOne;stroke-width:0.75">Relighted views from a novel viewpoint</tspan></text>
         </g>
       </g>
       <g
