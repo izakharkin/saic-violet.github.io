@@ -452,7 +452,20 @@
   <!-- Photoswipe -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.css" rel="stylesheet">
-  <link href="index.css" rel="stylesheet">
+  <link href="static/css/carousel.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script> 
+  <script src="./static/js/carousel.js"></script> 
+  
 
   <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
@@ -516,7 +529,7 @@
     <!-- ===================== TITLE ========================== -->
     <!-- ====================================================== -->
     <center>
-      <div class="title">Relightable 3D Head Portraits from a Smartphone Video</div>
+      <div class="title" style="font-size:32pt">Relightable 3D Head Portraits from a Smartphone Video</div>
       <!--<div class="subtitle">Version 2</div>-->
       <div></div>
     </center>
@@ -584,6 +597,51 @@
     </center>
 
     <!-- ====================================================== -->
+    <!-- ===================== CAROUSEL ======================= -->
+    <!-- ====================================================== -->
+
+    <section class="hero is-light is-small"> 
+      <div class="hero-body">
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-fullbody">
+              <video poster="" id="person4" autoplay controls muted loop height="50%">
+                <source src="assets/relightable-portrait/Part3 - Person4_cut_h264.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-steve">
+              <video poster="" id="person1" autoplay controls muted loop height="50%">
+                <source src="assets/relightable-portrait/Part3 - Person1_cut_h264.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-blueshirt">
+              <video poster="" id="person5" autoplay controls muted loop height="50%">
+                <source src="assets/relightable-portrait/Part3 - Person5_cut_h264.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-chair-tp">
+              <video poster="" id="person2" autoplay controls muted loop height="50%">
+                <source src="assets/relightable-portrait/Part3 - Person2_cut_h264.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <!-- 
+            <div class="item item-shiba">
+              <video poster="" id="person3" autoplay controls muted loop height="50%">
+                <source src="assets/relightable-portrait/Part3 - Person3_cut_h264.mp4"
+                        type="video/mp4">
+              </video>
+            </div> 
+            -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
     <!-- ===================== LINKS ========================== -->
     <!-- ====================================================== -->
 
@@ -592,21 +650,20 @@
     <center>
       <div class="row section" style="margin-bottom: -12px">
         <div class="col-sm-12">
-          <!-- <div class="col-sm-2 col-sm-offset-2" style="margin-bottom: 12px"> -->
-          <div class="col-sm-3 col-sm-offset-3" style="margin-bottom: 12px">
+          <div class="col-sm-2 col-sm-offset-4" style="margin-bottom: 12px">
             <a href="assets/relightable-portrait/arxiv_final_default.pdf">
               <svg xmlns="http://www.w3.org/2000/svg" class="img_links img-responsive" viewBox="0 0 24 24"><path d="M11.363 2c4.155 0 2.637 6 2.637 6s6-1.65 6 2.457v11.543h-16v-20h7.363zm.826-2h-10.189v24h20v-14.386c0-2.391-6.648-9.614-9.811-9.614zm4.811 13h-2.628v3.686h.907v-1.472h1.49v-.732h-1.49v-.698h1.721v-.784zm-4.9 0h-1.599v3.686h1.599c.537 0 .961-.181 1.262-.535.555-.658.587-2.034-.062-2.692-.298-.3-.712-.459-1.2-.459zm-.692.783h.496c.473 0 .802.173.915.644.064.267.077.679-.021.948-.128.351-.381.528-.754.528h-.637v-2.12zm-2.74-.783h-1.668v3.686h.907v-1.277h.761c.619 0 1.064-.277 1.224-.763.095-.291.095-.597 0-.885-.16-.484-.606-.761-1.224-.761zm-.761.732h.546c.235 0 .467.028.576.228.067.123.067.366 0 .489-.109.199-.341.227-.576.227h-.546v-.944z"/></svg>
               <p></p>
               <!-- <div class="author">Paper <i>(to be uploaded)</i></div> -->
-              <div class="author">Paper</div>
+              <div class="author" style="font-size: 18pt; font-family: 'Open Sans', sans-serif;">Paper</div>
             </a>
           </div>
           <!-- <div class="col-sm-2 col-sm-offset-1" style="margin-bottom: 12px"> -->
-          <div class="col-sm-3" style="margin-bottom: 12px">
+          <div class="col-sm-2" style="margin-bottom: 12px">
             <a href="https://www.youtube.com/watch?v=qQnNalM9hgY">
               <svg xmlns="http://www.w3.org/2000/svg" class="img_links img-responsive" viewBox="0 0 24 24"><path d="M10 9.333l5.333 2.662-5.333 2.672v-5.334zm14-4.333v14c0 2.761-2.238 5-5 5h-14c-2.761 0-5-2.239-5-5v-14c0-2.761 2.239-5 5-5h14c2.762 0 5 2.239 5 5zm-4 7c-.02-4.123-.323-5.7-2.923-5.877-2.403-.164-7.754-.163-10.153 0-2.598.177-2.904 1.747-2.924 5.877.02 4.123.323 5.7 2.923 5.877 2.399.163 7.75.164 10.153 0 2.598-.177 2.904-1.747 2.924-5.877z"/></svg>
               <p></p>
-              <div class="author">Video</div>
+              <div class="author" style="font-size: 18pt; font-family: 'Open Sans', sans-serif;">Video</div>
             </a>
           </div>
           <!-- <div class="col-sm-2 col-sm-offset-1" style="margin-bottom: 12px">
@@ -633,11 +690,12 @@
     <!-- ===================== TL;DR and TEASER =============== -->
     <!-- ====================================================== -->
 
-    <!-- <div class="row section">
+    <!--
+    <div class="row section">
       <p></p>
       <big><b>TL;DR:</b>  </big>
       <p></p>
-    </div> -->
+    </div> 
     <center>
       <div class="row section">
         <div class="col-sm-6 col-sm-offset-3">
@@ -645,6 +703,7 @@
         </div>
       </div>
     </center>
+    -->
 
     <!-- ====================================================== -->
     <!-- ===================== ABSTRACT ======================= -->
@@ -655,9 +714,9 @@
       <div class="col-sm-8 col-sm-offset-2">
         <!-- <div class="col-xs-8 col-xs-offset-2 text-justify"> -->
         <div class="section_title">Abstract</div>
-        <p> We propose a neural point-based graphics system for creating a relightable 3D portrait of a human head. The method requires a video of a person made by a smartphone camera with the flash blinking at a certain frequency. By Structure-from-Motion (SfM) software, a camera pose is estimated for each of the frames extracted from the video, and a dense point cloud is reconstructed afterwards. The point cloud is then filtered by a deep segmentation network. After training, our neural pipeline receives the point cloud, rasterized onto a novel camera view, and predicts several light-invariant feature maps, which, given novel lighting conditions, are fused into the relighted image. New lighting can either be simple (e.g. directional or point light) or complex (e.g. environment map).</p>
-
-        <p>Given two types of input frames (<i>flash</i> and <i>no-flash</i>), the neural pipeline is fitted to both sequences by decomposing each image into albedo, normals, and room shadows. The plausibility of decomposition is enforced by specific <i>facial priors</i> (see <a href="https://www.youtube.com/watch?v=qQnNalM9hgY">Video</a> for more detail).</p>
+        <p style="font-family: 'Open Sans', sans-serif; font-size: 14pt"> We propose a neural point-based graphics system for creating a relightable 3D portrait of a human head. The method requires a video of a person made by a smartphone camera with the flash blinking at a certain frequency. By Structure-from-Motion (SfM) software, a camera pose is estimated for each of the frames extracted from the video, and a dense point cloud is reconstructed afterwards. The point cloud is then filtered by a deep segmentation network. After training, our neural pipeline receives the point cloud, rasterized onto a novel camera view, and predicts several light-invariant feature maps, which, given novel lighting conditions, are fused into the relighted image. New lighting can either be simple (e.g. directional or point light) or complex (e.g. environment map).</p>
+        <p>&nbsp;</p>
+        <p style="font-family: 'Open Sans', sans-serif; font-size: 14pt">Given two types of input frames (<i>flash</i> and <i>no-flash</i>), the neural pipeline is fitted to both sequences by decomposing each image into albedo, normals, and room shadows. The plausibility of decomposition is enforced by specific <i>facial priors</i> (see <a href="https://www.youtube.com/watch?v=qQnNalM9hgY">Video</a> for more detail).</p>
         <!-- <div class="row section cropped-scheme"> -->
         <div class="row section">
           <center>
@@ -665,8 +724,8 @@
             <img src="assets/relightable-portrait/method_simple.png" width="80%">  
           </center>
         </div>
-
-        <p>In the paper, we showcase several head portraits created for smartphone videos, as well as quantitative and qualitative comparison on synthetic people. The performance of the method is evaluated under varying lighting conditions and at the extrapolated viewpoints and compared with existing relighting methods.</p>
+        <p>&nbsp;</p>
+        <p style="font-family: 'Open Sans', sans-serif; font-size: 14pt">In the paper, we showcase several head portraits created for smartphone videos, as well as quantitative and qualitative comparison on synthetic people. The performance of the method is evaluated under varying lighting conditions and at the extrapolated viewpoints and compared with existing relighting methods.</p>
       </div>
     </div>
 
@@ -788,10 +847,6 @@
     });
 
   </script>
-
-  <div class="footer"><center>VISION, LEARNING AND TELEPRESENCE LAB</center></div>
-  <div class="footer"><center>SAMSUNG AI CENTER MOSCOW</center></div>
-
 </body>
 
 </html>
