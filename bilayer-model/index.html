@@ -1,0 +1,556 @@
+<style type="text/css">
+ * { padding: 0; margin: 0;}
+
+    .container {
+        padding: 0px;
+        margin: 0px;
+        color: #404040;
+        font-size: 11pt;
+        font-family: 'Open Sans', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        color: #444;
+        /*background-color: #FFFDFA;*/
+        /*background: linear-gradient(to right, white, #eee, white);
+        background: -webkit-linear-gradient( right, white, #eee, white)*/
+        /*background-image: url("/PaintSwatches_1400x900.jpg");*/
+        /*font-family: 'textbook', arial, sans-serif;*/
+        /*margin-left: auto;
+        margin-right: auto;*/
+        /*max-width: 2000px;*/
+    }
+
+    .container-video {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+    }
+    /* Then style the iframe to fit in the container div with full height and width */
+    .responsive-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+    }
+   .section {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+
+   .title {
+      color: #000000;
+      font-family: 'Roboto Condensed', sans-serif;
+      padding-top: 10px;
+      padding-bottom: 25px;
+      font-size: 44pt;
+      line-height: 100%;
+      font-weight: 700;
+      color: #444;
+    }
+    
+    .author {
+      font-size: 13pt;
+    }
+
+    .links {
+      font-size: 24pt;
+    }
+
+    .section_title {
+      color: #000000;
+      font-family: 'Roboto Condensed', sans-serif;
+      /*padding-top: 10px;*/
+      /*padding-bottom: 10px;*/
+      font-size: 24pt;
+      line-height: 100%;
+      font-weight: 700;
+      padding-bottom: 10px;
+      color: #444;
+      /*margin-left: auto;
+        margin-right: auto;
+      /*line-height: 100%;*/
+      /*font-weight: 700;*/
+    }
+    
+  .shadow {
+      -webkit-box-shadow: 5px 5px 5px #aaa;
+      -moz-box-shadow: 5px 5px 5px #aaa;
+      box-shadow: 5px 5px 5px #aaa;
+      margin-bottom: 10px;
+  }
+
+  .aff {
+      margin-bottom: 16px;
+      /*max-width: 40px;*/
+      max-height: 30px
+  }
+
+
+
+    .img_authors {
+      position: relative;
+      max-width: 130px;
+      max-height: 130px
+    }
+
+    .img_links {
+      position: relative;
+      max-width: 70px;
+      max-height: 70px
+    }
+
+.img-responsive-2 {
+  display: block;
+  max-width: 80%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text {
+    position:relative;
+    line-height:2em;
+    overflow:hidden;
+}
+.fadingEffect {
+    position:absolute;
+    top:0; bottom:0; right:0;
+    width:100%;
+    background:#FFFAFA;
+    -moz-animation: showHide 5s ease-in alternate infinite; /* Firefox */
+    -webkit-animation: showHide 5s ease-in alternate infinite; /* Safari and Chrome */
+    -ms-animation: showHide 5s ease-in alternate infinite; /* IE10 */
+    -o-animation: showHide 5s ease-in alternate infinite; /* Opera */
+    animation: showHide 5s ease-in alternate infinite;
+}
+@-webkit-keyframes showHide { /* Chrome, Safari */
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+@-moz-keyframes showHide { /* FF */
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+@-ms-keyframes showHide { /* IE10 */
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+@-o-keyframes showHide { /* Opera */
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+@keyframes showHide {
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+
+
+#cf {
+  position:relative;
+  max-height:301px;
+  /*width:450px;*/
+
+  width:100%;
+  height:100%;
+  /*overflow:hidden; */
+  /*width:inherit;*/
+
+  /*max-height: auto;*/
+
+  /*margin:0 auto;*/
+}
+
+#cf img {
+  position:absolute;
+  
+  /*height:100%;*/
+  /*width:100%;*/
+
+  opacity: 0;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  animation-name: cfFadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 28s;  /* 7*4 */
+}
+
+
+@keyframes cfFadeInOut {
+  /* fade out */
+  0% {
+    opacity:0;
+  }
+  5% {
+    opacity:1;
+  }
+  /* fade in */
+  14.28% {
+    opacity:1;
+  }
+  19.28% {
+    opacity:0;
+  }
+}
+
+#cf img:nth-of-type(7) {
+  animation-delay: 24s;
+}
+#cf img:nth-of-type(6) {
+  animation-delay: 20s;
+}
+#cf img:nth-of-type(5) {
+  animation-delay: 16s;
+}
+#cf img:nth-of-type(4) {
+  animation-delay: 12s;
+}
+#cf img:nth-of-type(3) {
+  animation-delay: 8s;
+}
+#cf img:nth-of-type(2) {
+  animation-delay: 4s;
+}
+#cf img:nth-of-type(1) {
+  animation-delay: 0s;
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none !important;
+    /* reset the text-align */
+    text-align:center;
+    /* inline-block space fix */
+    margin-right:-4px;
+    min-width: 170px;
+}
+
+html, body {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 100%;             /* need for iframe height 100% to work */
+}
+
+iframe {
+  box-sizing: border-box;   /* make the border size be included in the height */
+  /*display: block;            make them block to fix white space margin */
+  width: 100%;
+}
+
+.hint {
+  color: #A00;
+  font-size: 10pt;
+  margin-bottom: 10px;
+}
+
+.img-process {
+  /*width: 100%;*/
+  margin: 5px;
+  max-height: 200px; 
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 1;
+}
+.img-process:hover{
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.centeredd {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+p {
+  font-size: 16px;
+}
+
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176056447-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-176056447-1');
+    </script>
+
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Fast Bi-layer Neural Synthesis of One-Shot Realistic Head Avatars</title>
+    <meta property="og:title" content="Fast Bi-layer Neural Synthesis of One-Shot Realistic Head Avatars" />
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"><!-- <link rel="stylesheet" href="../css/bootstrap-theme.min.css"> -->
+
+    <!-- Google fonts -->
+    <!-- <link href="../css/google-fonts.css" rel="stylesheet" type="text/css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Open+Sans:300italic,400italic,600italic,400,700,300,600" rel="stylesheet" type="text/css">
+
+    <!-- Photoswipe -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.css" rel="stylesheet">
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: { equationNumbers: { autoNumber: "AMS" } },
+    });
+    </script>
+
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <script>
+    function resizeIframe(obj) {
+      obj.style.height = 0;
+      obj.style.height = (obj.contentWindow.document.body.scrollHeight + 5) + 'px';
+    }
+  </script>
+  <script language="JavaScript">
+
+    function resize_iframe()
+    {
+      obj = document.getElementById("myiframe")
+
+      obj.style.height = 0;
+      obj.style.height = (obj.contentWindow.document.body.scrollHeight) + 'px';
+      
+      document.getElementById("cf").style.height = document.getElementById("lastimage").height + 8;
+    }
+    window.onresize=resize_iframe; 
+    
+
+  </script>
+
+  </head>
+
+  <body>
+    <script src="zepto.min.js"></script>
+  <script>
+    window.addEventListener('message', function(event) {
+      if(height = event.data['height']) {
+        $('iframe').css('height', height + 'px')
+      }
+    });
+    
+
+    // var resizeEvent = new Event('resize');
+    // window.dispatchEvent(resizeEvent);
+    
+  </script>
+  <div class="container">
+
+  <center>
+    <div class="title">Fast Bi-layer Neural Synthesis of <br/>
+    One-Shot Realistic Head Avatars</div>
+  </center>
+   
+
+ <center>
+    <div class="row row-eq-height" style="margin-bottom: -10px">
+      <!-- <div class="col-sm-12"> -->
+      <div class="col-sm-15">
+        <a href="https://scholar.google.com/citations?user=wyF-PxIAAAAJ">
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+              <div class="author"><span style="font-weight: 600">Egor Zakharov</span><br>Samsung AI Center<br>Skoltech</div>
+            <!-- </div> -->
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/aleksei-ivakhnenko">
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+              <div class="author"><span style="font-weight: 600">Aleksei Ivakhnenko</span><br>Samsung AI Center</div>
+            <!-- </div> -->
+          </div>
+        </a>
+        <a href="https://scholar.google.com/citations?user=Zm8hNeUAAAAJ&hl=en">
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+              <div class="author"><span style="font-weight: 600">Aliaksandra Shysheya</span><br>Samsung AI Center<br>Cambridge University</div>
+            <!-- </div> -->
+          </div>
+        </a>
+        <a href="http://sites.skoltech.ru/compvision/members/vilem">
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+              <div class="author"><span style="font-weight: 600">Victor Lempitsky</span><br>Samsung AI Center<br>Skoltech</div>
+            <!-- </div> -->
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-15">
+        <a href="https://arxiv.org/abs/2008.10174">
+          <div class="col-sm-6" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+              <div class="links"><span style="font-weight: 600">&#128196; Paper</span></div>
+            <!-- </div> -->
+          </div>
+        </a>
+        <a href="https://github.com/saic-violet/bilayer-model">
+          <div class="col-sm-6" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+              <div class="links"><span style="font-weight: 600">💻 Code</span></div>
+            <!-- </div> -->
+          </div>
+        </a>
+      </div>
+    <!-- </div> -->
+    </div>
+  </center>
+
+
+  <!-- ====================================================== -->
+  <!-- ===================== TEASER ============== -->
+  <!-- ====================================================== -->
+
+  <center>
+    <div class="row section center row-eq-height">
+      <div class="col center col-sm-12">
+          <center>
+          <img src="assets/teaser.png" class="img-responsive"/>
+          </center>
+        <span style="font-size:20px"><i><br>Our new architecture creates photorealistic neural avatars in one-shot mode and achieves considerable speed-up over previous approaches. Rendering takes just 42 milliseconds on Adreno 640 (Snapdragon 855) GPU, FP16 mode.</i>
+        </span>
+      </div>
+    </div>
+  </center>
+
+  <div class="row section">
+    <div class="section_title">Video presentation</div>
+    <div class="col center col-sm-12 container-video">
+      <iframe class="responsive-iframe" src="https://www.youtube.com/embed/54tji11VhOI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- ====================================================== -->
+  <!-- ===================== ABSTRACT ======================= -->
+  <!-- ====================================================== -->
+  <div class="row section">
+    <!-- <div class="col-xs-8 col-xs-offset-2 text-justify"> -->
+    <div class="section_title">Abstract</div>
+    <p> <!-- style="text-indent: 30px" -->
+      We propose a neural rendering-based system that creates head avatars from a single photograph. Our approach models a person's appearance by decomposing it into two layers. The first layer is a pose-dependent coarse image that is synthesized by a small neural network. The second layer is defined by a pose-independent texture image that contains high-frequency details. The texture image is generated offline, warped and added to the coarse image to ensure a high effective resolution of synthesized head views. We compare our system to analogous state-of-the-art systems in terms of visual quality and speed. The experiments show significant inference speedup over previous neural head avatar models for a given visual quality. We also report on a real-time smartphone-based implementation of our system.
+    </p>
+    <!-- </div> -->
+  </div>
+  
+  <div class="row section">
+    <!-- <div class="col-xs-8 col-xs-offset-2 text-justify"> -->
+    <div class="section_title">Main idea</div>
+    <center>
+      <div class="row section center row-eq-height">
+        <div class="col center col-sm-12">
+            <center>
+            <img src="assets/scheme.png" class="img-responsive"/>
+            </center>
+          </span>
+        </div>
+      </div>
+    </center>
+    <p> <!-- style="text-indent: 30px" -->
+      In our approach, the main idea is to split a single heavy generator network for images, which is run for each frame during test time, into two: one is run only during initialization (i.e., once per <i>identity</i>), and a much lighter network, which we call an inference generator, is run once per frame. In our proposed implementation, the following networks are trained in an end-to-end fashion:
+    </p>
+
+    <br>
+
+    <ul>
+      <li>The <i>embedder</i> network $E \big( \mathbf{x}^i(s), \mathbf{y}^i(s) \big)$ encodes a concatenation of a source image and a landmark image into a stack of embeddings $\{ \hat{\mathbf{e}}_k^i {\scriptstyle  (} s {\scriptstyle  )} \}$, which are used for initialization of the adaptive parameters inside the generators.</li>
+
+      <br>
+
+      <li>The <i>texture generator</i> network $G_\text{tex} \big( \{ \hat{\mathbf{e}}_k^i {\scriptstyle  (} s {\scriptstyle  )} \} \big)$ initializes its adaptive parameters from the embeddings and decodes an inpainted high-frequency component of the source image, which we call a texture $\hat{\mathbf{X}}^i(s)$. This texture is initialized once per identity and is aimed to be pose invariant.</li>
+
+      <br>
+
+      <li>The <i>inference generator</i> network $G \big( \mathbf{y}^i(t), \{ \hat{\mathbf{e}}_k^i {\scriptstyle  (} s {\scriptstyle  )} \} \big)$ maps target poses into a predicted image $\hat{\mathbf{x}^i(t)}$. The network accepts vector keypoints as an input and outputs a low-frequency layer of the output image $\hat{\mathbf{x}}_\text{LF}^i(t)$, which encodes basic facial features, skin color and lighting, and $\hat{\mathbf{\omega}}^i(t)$ -- a mapping between coordinate spaces of the texture and the output image. Then, the high-frequency layer of the output image is obtained by warping the predicted texture: $\hat{\mathbf{x}}_\text{HF}^i(t) = \hat{\mathbf{\omega}}^i(t) \circ \hat{\mathbf{X}}^i(s)$, and is added to a low-frequency component to produce the final image:
+                
+      \begin{equation*}\label{eq:image}
+          \hat{\mathbf{x}}^i(t) = \hat{\mathbf{x}}_\text{LF}^i(t) + \hat{\mathbf{x}}_\text{HF}^i(t) \, .
+      \end{equation*}
+      </li>
+    </ul>
+
+    <br>
+
+    <p>
+      During training, we first encode a source frame into the embeddings, then we initialize adaptive parameters of both inference and texture generators, and predict a high-frequency texture. These operations are only done once per avatar. Target keypoints are then used to predict a low-frequency component of the output image and a warping field, which, applied to the texture, provides the high-frequency component. Two components are then added together to produce an output. We therefore decompose an output image into two layers: a low-frequency layer is produced by the small inference generator directly, while a high-frequency layer is produced by a warping of a static texture.
+    </p>
+  </div>
+
+  <div class="row section center row-eq-height">
+    <!-- <div class="col-xs-8 col-xs-offset-2 text-justify"> -->
+    <div class="section_title">Results</div>
+    <p>The results below are all achieved with a model running in 42ms per frame on Snapdragon 855.</p>
+    <br>
+    <div class="col center col-sm-12">
+      <center>
+      <img src="assets/visuals_comp.gif" class="img-responsive-2 center"/>
+      <span style="font-size:20px"><i>A visualization of each individual output produced by our model.<br><br></i></span>
+      </center>
+    </div>
+    <div class="col center col-sm-12">
+      <br>
+      <center>
+      <img src="assets/visuals_self.gif" class="img-responsive-2 center"/>
+      <span style="font-size:20px"><i>Self-driving results.<br><br></i></span> 
+      </center>
+    </div>
+  </div>
+
+  <div class="row section center row-eq-height">
+    <!-- <div class="col-xs-8 col-xs-offset-2 text-justify"> -->
+    <div class="section_title">Citation</div>
+    <pre>
+@InProceedings{Zakharov20,
+  author={Zakharov, Egor and Ivakhnenko, Aleksei and Shysheya, Aliaksandra and Lempitsky, Victor},
+  title={Fast Bi-layer Neural Synthesis of One-Shot Realistic Head Avatars},
+  booktitle = {European Conference of Computer vision (ECCV)},
+  month = {August},
+  year = {2020}}</pre>                                
+  </div>
+</body>
+</html>
+ 

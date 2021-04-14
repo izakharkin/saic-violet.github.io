@@ -1,1 +1,728 @@
-To be done by CVPR 2019
+<style type="text/css">
+ * { padding: 0; margin: 0;}
+
+    .container {
+        padding: 0px;
+        margin: 0px;
+        color: #404040;
+        font-size: 11pt;
+        font-family: 'Open Sans', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        color: #444;
+        /*background-color: #FFFDFA;*/
+        /*background: linear-gradient(to right, white, #eee, white);
+        background: -webkit-linear-gradient( right, white, #eee, white)*/
+        /*background-image: url("/PaintSwatches_1400x900.jpg");*/
+        /*font-family: 'textbook', arial, sans-serif;*/
+        /*margin-left: auto;
+        margin-right: auto;*/
+        /*max-width: 2000px;*/
+    }
+    body {
+        background-color: #FFFAFA !important;
+        background-color: #FAFAFA !important;
+    }
+
+
+   .section {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+
+   .title {
+      color: #000000;
+      font-family: 'Roboto Condensed', sans-serif;
+      padding-top: 10px;
+      padding-bottom: 25px;
+      font-size: 36pt;
+      line-height: 100%;
+      font-weight: 700;
+      color: #444;
+    }
+    
+    .author {
+      font-size: 13pt;
+    }
+
+    .university {
+      font-size: 13pt;
+      padding-top: 15px;
+    }
+
+    .section_title {
+      color: #000000;
+      font-family: 'Roboto Condensed', sans-serif;
+      /*padding-top: 10px;*/
+      /*padding-bottom: 10px;*/
+      font-size: 24pt;
+      line-height: 100%;
+      font-weight: 700;
+      padding-bottom: 10px;
+      color: #444;
+      /*margin-left: auto;
+        margin-right: auto;
+      /*line-height: 100%;*/
+      /*font-weight: 700;*/
+    }
+    
+  .shadow {
+      -webkit-box-shadow: 5px 5px 5px #aaa;
+      -moz-box-shadow: 5px 5px 5px #aaa;
+      box-shadow: 5px 5px 5px #aaa;
+      margin-bottom: 10px;
+  }
+
+  .aff {
+      margin-bottom: 16px;
+      /*max-width: 40px;*/
+      max-height: 30px
+  }
+
+
+
+    .img_authors {
+      position: relative;
+      max-width: 130px;
+      max-height: 130px
+    }
+
+    .img_links {
+      position: relative;
+      max-width: 70px;
+      max-height: 70px
+    }
+
+
+.text {
+    position:relative;
+    line-height:2em;
+    overflow:hidden;
+}
+.fadingEffect {
+    position:absolute;
+    top:0; bottom:0; right:0;
+    width:100%;
+    background:#FFFAFA;
+    -moz-animation: showHide 5s ease-in alternate infinite; /* Firefox */
+    -webkit-animation: showHide 5s ease-in alternate infinite; /* Safari and Chrome */
+    -ms-animation: showHide 5s ease-in alternate infinite; /* IE10 */
+    -o-animation: showHide 5s ease-in alternate infinite; /* Opera */
+    animation: showHide 5s ease-in alternate infinite;
+}
+
+ 
+.btn-group button {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    padding: .50em 2em .90em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em; 
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    width: 12%;
+}
+
+.button:hover {
+    text-decoration: none;
+}
+.button:active {
+    position: relative;
+    top: 1px;
+}
+
+.btn-group.btn-block {
+    display: flex;
+}
+
+@-webkit-keyframes showHide { /* Chrome, Safari */
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+@-moz-keyframes showHide { /* FF */
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+@-ms-keyframes showHide { /* IE10 */
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+@-o-keyframes showHide { /* Opera */
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+@keyframes showHide {
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:100%;}
+}
+
+
+#cf {
+  position:relative;
+  max-height:301px;
+  /*width:450px;*/
+
+  width:100%;
+  height:100%;
+  /*overflow:hidden; */
+  /*width:inherit;*/
+
+  /*max-height: auto;*/
+
+  /*margin:0 auto;*/
+}
+
+#cf img {
+  position:absolute;
+  
+  /*height:100%;*/
+  /*width:100%;*/
+
+  opacity: 0;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  animation-name: cfFadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 28s;  /* 7*4 */
+}
+
+
+@keyframes cfFadeInOut {
+  /* fade out */
+  0% {
+    opacity:0;
+  }
+  5% {
+    opacity:1;
+  }
+  /* fade in */
+  14.28% {
+    opacity:1;
+  }
+  19.28% {
+    opacity:0;
+  }
+}
+
+#cf img:nth-of-type(7) {
+  animation-delay: 24s;
+}
+#cf img:nth-of-type(6) {
+  animation-delay: 20s;
+}
+#cf img:nth-of-type(5) {
+  animation-delay: 16s;
+}
+#cf img:nth-of-type(4) {
+  animation-delay: 12s;
+}
+#cf img:nth-of-type(3) {
+  animation-delay: 8s;
+}
+#cf img:nth-of-type(2) {
+  animation-delay: 4s;
+}
+#cf img:nth-of-type(1) {
+  animation-delay: 0s;
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none !important;
+    /* reset the text-align */
+    text-align:center;
+    /* inline-block space fix */
+    margin-right:-4px;
+    min-width: 170px;
+}
+
+html, body {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 100%;             /* need for iframe height 100% to work */
+}
+
+iframe {
+  box-sizing: border-box;   /* make the border size be included in the height */
+  /*display: block;            make them block to fix white space margin */
+  width: 100%;
+}
+
+.hint {
+  color: #A00;
+  font-size: 12pt;
+  margin-bottom: 10px;
+  margin-top: 7px;
+}
+
+.img-process {
+  /*width: 100%;*/
+  margin: 5px;
+  max-height: 200px; 
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 1;
+}
+.img-process:hover{
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.centeredd {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Textured Neural Avatar</title>
+      <meta property="og:image" content="https://raw.githubusercontent.com/saic-violet/saic-violet.github.io/master/texturedavatar/files/1.jpg"/>
+      <meta property="og:title" content="Textured Neural Avatars" />
+
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"><!-- <link rel="stylesheet" href="../css/bootstrap-theme.min.css"> -->
+
+      <!-- Google fonts -->
+      <!-- <link href="../css/google-fonts.css" rel="stylesheet" type="text/css"> -->
+      <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Open+Sans:300italic,400italic,600italic,400,700,300,600" rel="stylesheet" type="text/css">
+
+      <!-- Photoswipe -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.css" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.css" rel="stylesheet">
+
+      <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+        TeX: { equationNumbers: { autoNumber: "AMS" } },
+      });
+      </script>
+
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+  <script>
+  function resizeIframe(obj) {
+    obj.style.height = 0;
+    obj.style.height = (obj.contentWindow.document.body.scrollHeight + 5) + 'px';
+  }
+
+
+
+
+  
+</script>
+    <script language="JavaScript">
+
+      function resize_iframe()
+      {
+        obj = document.getElementById("myiframe")
+
+        obj.style.height = 0;
+        obj.style.height = (obj.contentWindow.document.body.scrollHeight) + 'px';
+        
+        document.getElementById("cf").style.height = document.getElementById("lastimage").height + 8;
+      }
+      window.onresize=resize_iframe; 
+      
+
+    </script>
+
+  </head>
+
+  <body>
+    <!-- <script src="zepto.min.js"></script> -->
+  <script>
+    window.addEventListener('message', function(event) {
+      if(height = event.data['height']) {
+        $('iframe').css('height', height + 'px')
+      }
+    });
+    
+
+    // var resizeEvent = new Event('resize');
+    // window.dispatchEvent(resizeEvent);
+    
+  </script>
+  <div class="container">
+
+
+    <!-- ====================================================== -->
+    <!-- ===================== TITLE ========================== -->
+    <!-- ====================================================== -->
+    <center>
+          <div class="title">Textured Neural Avatars</div>
+    </center>
+   
+
+ <center>
+      <div class="row row-eq-height" style="margin-bottom: 10px">
+        <!-- <div class="col-sm-12"> -->
+        <div class="col-sm-15">
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+            <a href="mailto:a.shysheya@samsung.com">
+              <div class="author"><span style="font-weight: 600; color: #444">Aliaksandra Shysheya<sup>1,2</span></div>
+            </a>
+            <!-- </div> -->
+          </div>
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+
+             <a href="mailto:e.zakharov@samsung.com">
+              <div class="author"><span style="font-weight: 600; color: #444">Egor Zakharov<sup>1,2</span></div>
+            <!-- </div> -->
+             </a>
+          </div>
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+
+            <a href="mailto:k.aliev@samsung.com">
+              <div class="author"><span style="font-weight: 600; color: #444">Kara-Ali Aliev<sup>1</span></div>
+            <!-- </div> -->
+            </a>
+          </div>
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+            <a href="mailto:r.bashirov@samsung.com">
+              <div class="author"><span style="font-weight: 600; color: #444">Renat Bashirov<sup>1</span></div>
+            <!-- </div> -->
+            </a>
+          </div>
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+             <a href="mailto:e.burkov@samsung.com">
+              <div class="author"><span style="font-weight: 600; color: #444">Egor Burkov<sup>1,2</span></div>
+            <!-- </div> -->
+            </a>
+          </div>
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+            <a href="mailto:k.iskakov@samsung.com">
+              <div class="author"><span style="font-weight: 600; color: #444">Karim Iskakov<sup>1</span></div>
+            <!-- </div> -->
+            </a>
+          </div>
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+            <a href="mailto:ivakhnenko.a@samsung.com">
+              <div class="author"><span style="font-weight: 600; color: #444">Aleksei Ivakhnenko<sup>1</span></div>
+            </a>
+            <!-- </div> -->
+          </div>
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+            <a href="mailto:y.malkov@samsung.com">
+              <div class="author"><span style="font-weight: 600; color: #444">Yury Malkov<sup>1</span></div>
+            <!-- </div> -->
+            </a>
+          </div>
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+             <a href="mailto:i.pasechnik@samsung.com">
+              <div class="author"><span style="font-weight: 600; color: #444">Igor Pasechnik<sup>1</span></div>
+            <!-- </div> -->
+            </a>
+          </div>
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+            <a href="mailto:dmitry.ulyanov@skoltech.ru">
+              <div class="author"><span style="font-weight: 600; color: #444">Dmitry Ulyanov<sup>1,2</span></div>
+            <!-- </div> -->
+            </a>
+          </div>
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+            <a href="mailto:a.vakhitov@samsung.com">
+              <div class="author"><span style="font-weight: 600; color: #444">Alexander Vakhitov<sup>1,2</span></div>
+            <!-- </div> -->
+            </a>
+          </div>
+          <div class="col-sm-3" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+            <a href="mailto:v.lempitsky@samsung.com">
+              <div class="author"><span style="font-weight: 600; color: #444">Victor Lempitsky<sup>1,2</span></div>
+            </a>
+            <!-- </div> -->
+          </div>
+
+          <div class="col-sm-3 col-sm-offset-2" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+            <a href="https://research.samsung.com/aicenter_moscow">
+            <div class="university"><span style="font-weight: 600; color: #444"><sup>1</sup> Samsung AI Center, Moscow</span></div>
+            </a>
+            <!-- </div> -->
+          </div>
+
+          <div class="col-sm-6" style="margin-bottom: 10px">
+            <!-- <div class="col-sm-12"> -->
+            <a href="https://www.skoltech.ru/en/">
+            <div class="university"><span style="font-weight: 600; color: #444"><sup>2</sup> Skolkovo Institute of Science and Technology, Moscow</span></div>
+            </a>
+            <!-- </div> -->
+          </div>
+
+        </div>
+
+
+      <!-- </div> -->
+    </div>
+    </center>
+
+
+
+    <center>
+            <!-- <div class="col-sm-12"> -->
+            <div class="university"><span style="font-weight: 600; color: #444">CVPR 2019 (oral)</span></div>
+            <!-- </div> -->
+    </center>
+
+
+  <!-- ====================================================== -->
+  <!-- ===================== TEASER ============== -->
+  <!-- ====================================================== -->
+
+    <br>
+  <center>
+    <div class="row section center row-eq-height">
+      <div class="col center col-sm-15" style="margin-top: 10px">
+          <center>
+          <img src="files/1.jpg" class="img-responsive"/>
+          </center>
+        <span style="font-size:17px"><i>We propose a new model for neural rendering of humans. The model is trained for a single person and can produce renderings of this person from <b>novel viewpoint</b> (top) or in the <b>new body pose</b> (bottom) unseen during training</i>.
+        </span>
+      </div>
+    </div>
+  </center>
+
+
+
+
+
+    <!-- ====================================================== -->
+    <!-- ===================== ABSTRACT ======================= -->
+    <!-- ====================================================== -->
+    <div class="row section">
+      <!-- <div class="col-xs-8 col-xs-offset-2 text-justify"> -->
+      <div class="section_title">Abstract</div>
+      <p align="justify"> <!-- style="text-indent: 30px" -->
+        <span style="font-size:18px">We present a system for learning full body <b>neural avatars</b>, i.e. deep networks that produce full body renderings of a person for varying body pose and camera position. Our system takes the middle path between the classical graphics pipeline and the recent deep learning approaches that generate images of humans using image-to-image translation. In particular, our system estimates an explicit two-dimensional texture map of the model surface. At the same time, it abstains from explicit shape modeling in 3D. Instead, at test time, the system uses a fully-convolutional network to directly map a set of body feature points w.r.t. the camera  to the 2D texture coordinates of individual pixels in the image frame. We show that such system  is capable of generating realistic renderings while being trained on videos annotated with 3D poses and foreground masks. We also demonstrate that <b>maintaining an explicit texture representation helps our system to achieve better generalization</b> compared to systems that use direct image-to-image translation.
+        </span>
+      </p>
+      <!-- </div> -->
+    </div>
+
+
+    <center>
+    <div class="row section" style="margin-bottom: -12px">
+      <div class="col-sm-10 col-sm-offset-1">
+        <div class="col-sm-12 center">
+        <div class="col-sm-5" style="margin-bottom: 12px">
+          <div class="col-sm-12">
+            <a href="https://arxiv.org/abs/1905.08776">
+                <img src="files/pdf.svg" class="img_links img-responsive">
+                <div class="author">Paper</div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-7" style="margin-bottom: 12px">
+          <div class="col-sm-12">
+            <a href="https://github.com/saic-violet/textured_avatars">
+                <img src="files/github.svg" class="img_links img-responsive" >
+                <div class="author">Code</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </center>
+
+
+<!-- 
+    <div class="col center col-sm-12" style="margin-bottom: 60px">
+        <center>
+        <img src="files/cvpr.png" class="img-responsive">
+        </center>
+        <span style="font-size:15px"><i>Renderings produced by multiple textured neural avatars (for all people in our study). All renderings are produced from the new viewpoints unseen during training</i>.
+    </div> -->
+
+
+    <!-- ====================================================== -->
+    <!-- ===================== Main idea ======================= -->
+    <!-- ====================================================== -->
+    <div class="row section">
+      <!-- <div class="col-xs-8 col-xs-offset-2 text-justify"> -->
+      <div class="section_title">Main idea</div>
+      <p align="justify"> <!-- style="text-indent: 30px" -->
+       <span style="font-size:18px">
+        We present a <b>neural avatar</b> system that does full body rendering and combines ideas from the classical computer graphics, namely the <b>decoupling of geometry and texture</b>, with the use of deep convolutional neural networks. In particular, similarly to the classic pipeline, our system explicitly estimates the 2D textures of body parts. 
+        <!-- The 2D texture within the classical pipeline effectively transfers the appearance of the body fragments across camera transformations and body articulations.  -->
+        Keeping this component within the neural pipeline <b>boosts generalization</b> across camera positions and body movement. The role of the convolutional network in our approach is only confined to predicting warping from texture to output image.
+        </span>
+      </p>
+
+      <p align="justify">
+      <span style="font-size:18px">
+      In general, we are interested in <b>synthesizing RGB images of a certain person</b> given his/her pose. The input pose is defined as a stack of "bone" rasterizations (one bone per channel). The input is processed by the fully-convolutional network to produce <b>body part assignment map stack</b> and <b>body part coordinate map stack</b>. These stacks are then used to sample the body texture maps at the locations prescribed by the part coordinate stack with the weights prescribed by the part assignment stack to produce the RGB image. In addition, the last body assignment stack map corresponds to the background probability. During learning, the mask and the RGB image are compared with ground truth and the resulting losses are backpropagated through the sampling operation into the fully-convolutional network and onto the texture, resulting in their updates. The <b>detailed scheme</b> of our method is illustrated below:
+      </span>
+
+      <div class="col center col-sm-12" style="margin-bottom: 30px">
+          <center>
+          <img src="files/neural_avatar_new-1.jpg" class="img-responsive" width=85%>
+          </center>
+      </div>
+      </p>
+
+      <!-- </div> -->
+    </div>
+
+  
+    <div class="row section">
+
+    <!-- ====================================================== -->
+    <!-- ============== Comparison ============================ -->
+    <!-- ====================================================== -->
+
+    <div class="section_title">Comparison with other methods</div>
+
+    <p align="justify">
+    <span style="font-size:18px">
+      To estimate the efficacy of the proposed system we considered two baselines, against which our model is compared. As a first one, we use the <a href="https://tcwang0509.github.io/vid2vid/"><b>video-to-video system</b></a> (<i>V2V</i>). As a second one, we consider a more <b>direct ablation</b> (<i>Direct</i>), which has the same network architecture that predicts RGB color and mask directly, rather than via body part assignments/coordinates. The Direct system is trained using the same losses and according to the same protocol as ours. 
+      </span>
+    </p>
+
+    <center>
+    <div class="btn-group btn-group-lg" style="width: 80%;">
+  		<button type="button" class="btn btn-outline-secondary" onclick="show(1)">CMU_1</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="show(2)">CMU_2</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="show(3)">Our_1</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="show(4)">Our_2</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="show(5)">Our_3</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="show(6)">Our_4</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="show(7)">Our_5</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="show(8)">Our_6</button>
+	</div>
+    <p class="hint">
+        Click on the button above to select neural avatar.
+    </p>
+    </center>
+	    
+    
+
+    <script>
+        function show(index) {
+
+            for (var i = 1; i < 9; i++) {
+                document.getElementById("vid" + i.toString()).style.display='none'       
+            }
+
+            document.getElementById("vid" + index.toString()).style.display='block'
+        }
+    </script>
+	  
+    <hr>
+
+    <iframe id='vid1' width="560" height="540" src="https://www.youtube.com/embed/nF1jQu7mdws" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:none;"></iframe>
+
+    <iframe id='vid2' width="560" height="540" src="https://www.youtube.com/embed/Ir7xsinnd9I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:none;"></iframe>
+
+
+    <iframe id='vid3' width="560" height="700" src="https://www.youtube.com/embed/S3BLMqksP9Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:none;"></iframe>
+
+    <iframe id='vid4' width="560" height="700" src="https://www.youtube.com/embed/BiMgSv0iC5g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:none;"></iframe>
+
+    <iframe id='vid5' width="560" height="700" src="https://www.youtube.com/embed/c1XBW8cSlxM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:none;"></iframe>
+
+    <iframe id='vid6' width="560" height="700" src="https://www.youtube.com/embed/n85k_K5V6i8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:none;"></iframe>
+
+    <iframe id='vid7' width="560" height="700" src="https://www.youtube.com/embed/IzSq3XEAIX4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:none;"></iframe>
+
+    <iframe id='vid8' width="560" height="700" src="https://www.youtube.com/embed/Q2luPyuzmxs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:none;"></iframe>
+
+    <script>
+	    document.getElementById("vid1").style.display='block'
+    </script>	    
+	    
+    <hr>
+
+    </div>
+
+
+    <div class="row section">
+
+    <!-- ====================================================== -->
+    <!-- ============== Finetuning ============================ -->
+    <!-- ====================================================== -->
+
+    <div class="section_title">Finetuning</div>
+
+    <center>
+          <img src="files/neural_avatar_external_sequences-1.jpg" class="img-responsive"/>
+          <span style="font-size:17px"><i>Results on external <b>monocular</b> sequences. In this scenario we transfer a trained model to a new person by fitting it to a <b>single video</b>. Rows 1-2: Comparison of avatars produced by <b>our</b> algorithm trained on sequences from <a href="https://arxiv.org/pdf/1808.01338.pdf">Alldieck et. al.</a> (<b>left</b>) and produced by <a href="https://arxiv.org/pdf/1808.01338.pdf">Alldieck et. al.</a> (<b>right</b>). Row 3: textured neural avatar from <a href="https://www.youtube.com/watch?v=LXO-jKksQkM">Youtube video</a></i>.
+    </center>
+
+    
+
+    </div>
+
+
+    <div class="row section">
+
+    <!-- ====================================================== -->
+    <!-- ==================== Demo ============================ -->
+    <!-- ====================================================== -->
+
+    <div class="section_title">Demo</div>
+
+    <iframe width="560" height="575" src="https://www.youtube.com/embed/3rrnUX8wWZ8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    </div>
+
+</body>
+</html>
+ 
