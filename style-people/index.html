@@ -55,6 +55,7 @@ a:hover { text-decoration: underline; }
     <div class="w3-right w3-hide-small">
       <a href="#home" class="w3-bar-item w3-button">Home</a>
       <a href="#abstract" class="w3-bar-item w3-button">Abstract</a>
+      <a href="#code" class="w3-bar-item w3-button">Code</a>
       <a href="#video" class="w3-bar-item w3-button">Video</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
@@ -70,6 +71,7 @@ a:hover { text-decoration: underline; }
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
   <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button">Home</a>
   <a href="#abstract" onclick="w3_close()" class="w3-bar-item w3-button">Abstract</a>
+  <a href="#code" onclick="w3_close()" class="w3-bar-item w3-button">Code</a>
   <a href="#video" onclick="w3_close()" class="w3-bar-item w3-button">Video</a>
   <a href="#links" onclick="w3_close()" class="w3-bar-item w3-button">Links</a>
 </nav>
@@ -173,28 +175,21 @@ a:hover { text-decoration: underline; }
     <div class="w3-col m1 l2">&nbsp;</div>
   </div>
   <div class="w3-row w3-text-black w3-hide-small w3-padding-32">
-    <div class="w3-col m4 l4">&nbsp;</div>
-    <div class="w3-col s6 m3 l3  w3-center">
+    <div class="w3-col s3 m4 l4">&nbsp;</div>
+    <div class="w3-col s6 m4 l4  w3-center">
       <a href="https://arxiv.org/pdf/2104.08363.pdf">
         <!-- <img src="assets/projects/pdf.svg" class="img_links img-responsive"> -->
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 20%" class="img_links img-responsive" viewBox="0 0 24 24"><path d="M11.363 2c4.155 0 2.637 6 2.637 6s6-1.65 6 2.457v11.543h-16v-20h7.363zm.826-2h-10.189v24h20v-14.386c0-2.391-6.648-9.614-9.811-9.614zm4.811 13h-2.628v3.686h.907v-1.472h1.49v-.732h-1.49v-.698h1.721v-.784zm-4.9 0h-1.599v3.686h1.599c.537 0 .961-.181 1.262-.535.555-.658.587-2.034-.062-2.692-.298-.3-.712-.459-1.2-.459zm-.692.783h.496c.473 0 .802.173.915.644.064.267.077.679-.021.948-.128.351-.381.528-.754.528h-.637v-2.12zm-2.74-.783h-1.668v3.686h.907v-1.277h.761c.619 0 1.064-.277 1.224-.763.095-.291.095-.597 0-.885-.16-.484-.606-.761-1.224-.761zm-.761.732h.546c.235 0 .467.028.576.228.067.123.067.366 0 .489-.109.199-.341.227-.576.227h-.546v-.944z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" style="width: 15%" class="img_links img-responsive" viewBox="0 0 24 24"><path d="M11.363 2c4.155 0 2.637 6 2.637 6s6-1.65 6 2.457v11.543h-16v-20h7.363zm.826-2h-10.189v24h20v-14.386c0-2.391-6.648-9.614-9.811-9.614zm4.811 13h-2.628v3.686h.907v-1.472h1.49v-.732h-1.49v-.698h1.721v-.784zm-4.9 0h-1.599v3.686h1.599c.537 0 .961-.181 1.262-.535.555-.658.587-2.034-.062-2.692-.298-.3-.712-.459-1.2-.459zm-.692.783h.496c.473 0 .802.173.915.644.064.267.077.679-.021.948-.128.351-.381.528-.754.528h-.637v-2.12zm-2.74-.783h-1.668v3.686h.907v-1.277h.761c.619 0 1.064-.277 1.224-.763.095-.291.095-.597 0-.885-.16-.484-.606-.761-1.224-.761zm-.761.732h.546c.235 0 .467.028.576.228.067.123.067.366 0 .489-.109.199-.341.227-.576.227h-.546v-.944z"/></svg>
         <p></p>
         <div class="author">ArXiv</div>
       </a>
-    </div>
-    <!-- <div class="w3-col s6 m3 l3 w3-center">
-      <a href="https://scholar.googleusercontent.com/scholar.bib?q=info:Oo5GrhS_qI4J:scholar.google.com/&output=citation&scisdr=CgXsghM5EODntVXTpr8:AAGBfm0AAAAAYIrWvr9VWP35zDp-nnBctZALkAPnEtIU&scisig=AAGBfm0AAAAAYIrWvs-5XkM13i_p7HYoWGwU0uF98Umw&scisf=4">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 20%"  class="img_links img-responsive" viewBox="0 0 24 24"><path d="M11.363 2c4.155 0 2.637 6 2.637 6s6-1.65 6 2.457v11.543h-16v-20h7.363zm.826-2h-10.189v24h20v-14.386c0-2.391-6.648-9.614-9.811-9.614zm4.811 13h-2.628v3.686h.907v-1.472h1.49v-.732h-1.49v-.698h1.721v-.784zm-4.9 0h-1.599v3.686h1.599c.537 0 .961-.181 1.262-.535.555-.658.587-2.034-.062-2.692-.298-.3-.712-.459-1.2-.459zm-.692.783h.496c.473 0 .802.173.915.644.064.267.077.679-.021.948-.128.351-.381.528-.754.528h-.637v-2.12zm-2.74-.783h-1.668v3.686h.907v-1.277h.761c.619 0 1.064-.277 1.224-.763.095-.291.095-.597 0-.885-.16-.484-.606-.761-1.224-.761zm-.761.732h.546c.235 0 .467.028.576.228.067.123.067.366 0 .489-.109.199-.341.227-.576.227h-.546v-.944z"/></svg>
-        <p></p>
-        <div class="author">BibTeX</div>
-      </a>
-    </div>
-    <div class="w3-col m3 l3">&nbsp;</div> -->
+    </div>    
+    <div class="w3-col m4 l4">&nbsp;</div>
   </div>
 
 
 <!-- Code Section -->
-<div class="bgimg-1 w3-padding-64" id="abstract">
+<div class="bgimg-1 w3-padding-64" id="code">
   <div class="w3-row w3-text-black w3-padding-16">
     <div class="w3-col s1 m1 l2">&nbsp;</div>
     <div class="w3-col s10 m10 l8 w3-left-align">
@@ -206,6 +201,7 @@ a:hover { text-decoration: underline; }
     <div class="w3-col s1 m1 l2">&nbsp;</div>
     <div class="w3-col s10 m10 l8 w3-justify">
         <span class="w3-large">This project consists of two parts. The first part, named <b>Neural Textures</b> shows textures optimized over a video of single person via backpropogation. The second one, <b>StylePeole</b> presents a generative model able to sample random neural textures as well as optimize latent code in one-shot or few-shot mode. </span>
+
     </div>
     <div class="w3-col s1 m1 l2">&nbsp;</div>
   </div>
@@ -213,8 +209,7 @@ a:hover { text-decoration: underline; }
   <div class="w3-row w3-text-black w3-padding-4">
     <div class="w3-col m1 l2">&nbsp;</div>
     <div class="w3-col m5 l4 w3-center w3-img">
-
-      <a href="https://github.com/saic-vul/neural-textures" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/Dolorousrtur/neural-textures" target="_blank" rel="noopener noreferrer">
         <img style="height: 100%" src="assets/ar.gif">
         <p></p>
         <div class="author"><b>Neural Textures</b> repository</div>
@@ -222,7 +217,7 @@ a:hover { text-decoration: underline; }
     </div>
     <div class="w3-col m5 l4 w3-center w3-img">
 
-      <a href="https://github.com/saic-vul/style-people" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/Dolorousrtur/style-people" target="_blank" rel="noopener noreferrer">
         <img style="height: 100%" src="assets/rwalks.gif">
         <p></p>
         <div class="author"><b>StylePeople</b> repository</div>
@@ -292,7 +287,6 @@ a:hover { text-decoration: underline; }
     <div class="w3-col s1 m1 l2">&nbsp;</div>
   </div>
 </div>
-
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-16">
