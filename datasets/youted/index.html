@@ -54,9 +54,9 @@ a:hover { text-decoration: underline; }
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
       <a href="#home" class="w3-bar-item w3-button">Home</a>
-      <a href="#abstract" class="w3-bar-item w3-button">Abstract</a>
-      <a href="#code" class="w3-bar-item w3-button">Code</a>
-      <a href="#video" class="w3-bar-item w3-button">Video</a>
+      <a href="#abstract" class="w3-bar-item w3-button">About</a>
+      <a href="#data" class="w3-bar-item w3-button">Downloads</a>
+      <a href="#scheme" class="w3-bar-item w3-button">Scheme</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -70,10 +70,9 @@ a:hover { text-decoration: underline; }
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
   <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button">Home</a>
-  <a href="#abstract" onclick="w3_close()" class="w3-bar-item w3-button">Abstract</a>
-  <a href="#code" onclick="w3_close()" class="w3-bar-item w3-button">Code</a>
-  <a href="#video" onclick="w3_close()" class="w3-bar-item w3-button">Video</a>
-  <a href="#links" onclick="w3_close()" class="w3-bar-item w3-button">Links</a>
+  <a href="#abstract" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
+  <a href="#code" onclick="w3_close()" class="w3-bar-item w3-button">Downloads</a>
+  <a href="#video" onclick="w3_close()" class="w3-bar-item w3-button">Scheme</a>
 </nav>
 
 <!-- Header with full-height image -->
@@ -81,17 +80,17 @@ a:hover { text-decoration: underline; }
   <div class="w3-row w3-text-black w3-padding-4">
     <div class="w3-col s1 m1 l1">&nbsp;</div>
     <div class="w3-col s10 m10 l10 w3-center">
-      <span class="w3-xxlarge w3-hide-medium w3-hide-small" style="font-size:4.310vw !important">YouTED</span>
-      <span class="w3-xxlarge w3-hide-large w3-hide-small"  style="font-size:5.300vw !important">YouTED</span>
-      <span class="w3-xlarge w3-hide-large w3-hide-medium">YouTED</span>
+      <span class="w3-xxlarge w3-hide-medium w3-hide-small" style="font-size:4.310vw !important">TEDXPeople</span>
+      <span class="w3-xxlarge w3-hide-large w3-hide-small"  style="font-size:5.300vw !important">TEDXPeople</span>
+      <span class="w3-xlarge w3-hide-large w3-hide-medium">TEDXPeople</span>
       </br>
       <span class="w3-xxlarge w3-hide-medium w3-hide-small" style="font-size:2.862vw !important">A Dataset of YouTube TED videos</span>
       <span class="w3-xxlarge w3-hide-large w3-hide-small"  style="font-size:3.724vw !important">A Dataset of YouTube TED videos</span>
-      <span class="w3-xlarge w3-hide-large w3-hide-medium">A Generative Model of Fullbody Human Avatars</span>
+      <span class="w3-xlarge w3-hide-large w3-hide-medium">A Dataset of YouTube TED videos</span>
     </div>
     <div class="w3-col s1 m1 l1">&nbsp;</div>
   </div>
-  <div class="w3-row w3-text-black w3-padding-2 w3-hide-small">&nbsp;</div>
+<!--   <div class="w3-row w3-text-black w3-padding-2 w3-hide-small">&nbsp;</div>
   <div class="w3-row w3-text-black">
     <div class="w3-hide-small w3-col s0 m1 l2">&nbsp;</div>
     <div class="w3-col s3 m2 l2 w3-left-align">
@@ -115,8 +114,8 @@ a:hover { text-decoration: underline; }
       <span class="w3-small w3-hide-large w3-hide-medium">Renat Bashirov<sup>1,2</sup></span>
     </div>
     <div class="w3-hide-small w3-col s0 m1 l2">&nbsp;</div>
-  </div>
-
+  </div> -->
+<!-- 
 
   <div class="w3-row w3-text-black">
     <div class="w3-hide-small w3-col s0 m1 l2">&nbsp;</div>
@@ -155,7 +154,7 @@ a:hover { text-decoration: underline; }
     </div>
     <div class="w3-hide-small w3-col s0 m1 l2">&nbsp;</div>
   </div>
-
+ -->
 
   <div class="w3-row w3-text-black w3-hide-small w3-padding-4">&nbsp;</div>
   <div class="w3-row w3-text-black w3-padding-4">
@@ -170,31 +169,11 @@ a:hover { text-decoration: underline; }
   <div class="w3-row w3-text-black w3-hide-small w3-padding-4">
     <div class="w3-col m1 l2">&nbsp;</div>
     <div class="w3-col s10 m10 l8 w3-center">
-        <span class="w3-large">Figure 1: <b>YouTED samples</b>, i.e pictures of people performing on a stage during TED/TEDx talks.</span>
+        <span class="w3-large">Figure 1: <b>TEDXPeople samples</b>, i.e pictures of people performing on a stage during TED/TEDx talks.</span>
     </div>
     <div class="w3-col m1 l2">&nbsp;</div>
   </div>
 
-  <div class="w3-row w3-text-black w3-hide-small w3-padding-32">
-    <div class="w3-col m3 l3">&nbsp;</div>
-    <div class="w3-col s6 m3 l3  w3-center">
-      <a href="https://arxiv.org/abs/2104.08363">
-        <!-- <img src="assets/projects/pdf.svg" class="img_links img-responsive"> -->
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 20%" class="img_links img-responsive" viewBox="0 0 24 24"><path d="M11.363 2c4.155 0 2.637 6 2.637 6s6-1.65 6 2.457v11.543h-16v-20h7.363zm.826-2h-10.189v24h20v-14.386c0-2.391-6.648-9.614-9.811-9.614zm4.811 13h-2.628v3.686h.907v-1.472h1.49v-.732h-1.49v-.698h1.721v-.784zm-4.9 0h-1.599v3.686h1.599c.537 0 .961-.181 1.262-.535.555-.658.587-2.034-.062-2.692-.298-.3-.712-.459-1.2-.459zm-.692.783h.496c.473 0 .802.173.915.644.064.267.077.679-.021.948-.128.351-.381.528-.754.528h-.637v-2.12zm-2.74-.783h-1.668v3.686h.907v-1.277h.761c.619 0 1.064-.277 1.224-.763.095-.291.095-.597 0-.885-.16-.484-.606-.761-1.224-.761zm-.761.732h.546c.235 0 .467.028.576.228.067.123.067.366 0 .489-.109.199-.341.227-.576.227h-.546v-.944z"/></svg>
-        <p></p>
-        <div class="author">Paper</div>
-      </a>
-    </div>
-    <div class="w3-col s6 m3 l3 w3-center">
-      <a href="https://arxiv.org/pdf/1906.08240v2.pdf">
-        <!-- <img src="assets/projects/pdf.svg" class="img_links img-responsive"> -->
-        <svg xmlns="http://www.w3.org/2000/svg" style="width: 20%" class="img_links img-responsive" viewBox="0 0 24 24"><path d="M12 5c3.453 0 5.891 2.797 5.567 6.78 1.745-.046 4.433.751 4.433 3.72 0 1.93-1.57 3.5-3.5 3.5h-13c-1.93 0-3.5-1.57-3.5-3.5 0-2.797 2.479-3.833 4.433-3.72-.167-4.218 2.208-6.78 5.567-6.78zm0-2c-4.006 0-7.267 3.141-7.479 7.092-2.57.463-4.521 2.706-4.521 5.408 0 3.037 2.463 5.5 5.5 5.5h13c3.037 0 5.5-2.463 5.5-5.5 0-2.702-1.951-4.945-4.521-5.408-.212-3.951-3.473-7.092-7.479-7.092z"/></svg>
-        <p></p>
-        <div class="author">Data</div>
-      </a>
-    </div>
-    <div class="w3-col m3 l3">&nbsp;</div>
-  </div>
 
 
 <!-- Abstract Section -->
@@ -209,7 +188,7 @@ a:hover { text-decoration: underline; }
   <div class="w3-row w3-text-black w3-padding-4">
     <div class="w3-col s1 m1 l2">&nbsp;</div>
     <div class="w3-col s10 m10 l8 w3-justify">
-        <span class="w3-large">TEDXPeople (YouTED) dataset contains  45,193  videos  of  TED  and TED-X talks. We have extracted and processed 16 frames from each video, in which a person is visible in either full-body or close-up upper-body view. This dataset is very diverse in terms of demographics andclothing styles,  though the resolution is limited and there are certain biases associated with peculiar lighting and camera viewpoints specific to TED(-X) talks. We open-source a list of links to YouTube videos and specific frames that we used. For each frame we also provide an SMPL-X fit of a speaker. </span>
+        <span class="w3-large">TEDXPeople dataset contains  48,188  videos  of  TED  and TED-X talks. We have extracted and processed from 8 to 16 frames from each video, in which a person is visible in either full-body or close-up upper-body view. This dataset is very diverse in terms of demographics andclothing styles,  though the resolution is limited and there are certain biases associated with peculiar lighting and camera viewpoints specific to TED(-X) talks. We open-source a list of links to YouTube videos and specific frames that we used. For each frame we also provide an SMPL-X fit of a speaker. </span>
     </div>
     <div class="w3-col s1 m1 l2">&nbsp;</div>
   </div>
@@ -226,6 +205,93 @@ a:hover { text-decoration: underline; }
     <div class="w3-col m1 l2">&nbsp;</div>
     <div class="w3-col s10 m10 l8 w3-center">
         <span class="w3-large">Figure 2: Full-body samples from a random TED video with corresponding SMPL-X fits.  </span>
+    </div>
+    <div class="w3-col m1 l2">&nbsp;</div>
+  </div>
+</div>
+
+<div class="bgimg-1 w3-padding-64" id="data">
+  <div class="w3-row w3-text-black w3-padding-16">
+    <div class="w3-col s1 m1 l2">&nbsp;</div>
+    <div class="w3-col s10 m10 l8 w3-left-align">
+      <span class="w3-xxlarge" >Downloads</span>
+    </div>
+    <div class="w3-col s1 m1 l2">&nbsp;</div>
+  </div>
+  <div class="w3-row w3-text-black w3-padding-4">
+    <div class="w3-col s1 m1 l2">&nbsp;</div>
+    <div class="w3-col s10 m10 l8 w3-justify">
+        <span class="w3-large">Due to legal reasons we can not publish raw images from the dataset. However, we provide list of youtube videos we used along with frame indexes used for training and testing. We also publish parameters for SMPLx body model fitted using <u><a href=https://github.com/vchoutas/smplify-x>smplify-x</a></u> mathod.   </span>
+    </div>
+
+  <div class="w3-row w3-text-black w3-padding-4">
+    <div class="w3-col s1 m1 l2">&nbsp;</div>
+    <div class="w3-col s10 m10 l8 w3-justify">
+        <span class="w3-large">
+          You may download a .zip file with the data splits and SMPLx parameters using the following links:
+          <!-- <ul>
+            <li>TEDXPeople.json</li>
+            <li>TEDXPeople_upperbody.json</li>
+            <li>TEDXPeople_512.json</li>
+          </ul> -->
+         </span>
+  </div>   
+
+<div class="w3-row w3-text-black w3-hide-small w3-padding-32">
+  <div class="w3-col m3 l3">&nbsp;</div>
+  <div class="w3-col s6 m3 l3 w3-center">
+    <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1OnhsN5Ll1FenljzdTG3OEgHxtiN66jLT">
+      <!-- <img src="assets/projects/pdf.svg" class="img_links img-responsive"> -->
+      <svg xmlns="http://www.w3.org/2000/svg" style="width: 20%" class="img_links img-responsive" viewBox="0 0 24 24"><path d="M12 5c3.453 0 5.891 2.797 5.567 6.78 1.745-.046 4.433.751 4.433 3.72 0 1.93-1.57 3.5-3.5 3.5h-13c-1.93 0-3.5-1.57-3.5-3.5 0-2.797 2.479-3.833 4.433-3.72-.167-4.218 2.208-6.78 5.567-6.78zm0-2c-4.006 0-7.267 3.141-7.479 7.092-2.57.463-4.521 2.706-4.521 5.408 0 3.037 2.463 5.5 5.5 5.5h13c3.037 0 5.5-2.463 5.5-5.5 0-2.702-1.951-4.945-4.521-5.408-.212-3.951-3.473-7.092-7.479-7.092z"/></svg>
+      <p></p>
+      <div class="author"><b>Data splits</b></div>
+    </a>
+  </div>
+  <div class="w3-col s6 m3 l3 w3-center">
+    <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1guxSacz2y7sJzQmM5XNquTlbmapJxHR5">
+      <!-- <img src="assets/projects/pdf.svg" class="img_links img-responsive"> -->
+      <svg xmlns="http://www.w3.org/2000/svg" style="width: 20%" class="img_links img-responsive" viewBox="0 0 24 24"><path d="M12 5c3.453 0 5.891 2.797 5.567 6.78 1.745-.046 4.433.751 4.433 3.72 0 1.93-1.57 3.5-3.5 3.5h-13c-1.93 0-3.5-1.57-3.5-3.5 0-2.797 2.479-3.833 4.433-3.72-.167-4.218 2.208-6.78 5.567-6.78zm0-2c-4.006 0-7.267 3.141-7.479 7.092-2.57.463-4.521 2.706-4.521 5.408 0 3.037 2.463 5.5 5.5 5.5h13c3.037 0 5.5-2.463 5.5-5.5 0-2.702-1.951-4.945-4.521-5.408-.212-3.951-3.473-7.092-7.479-7.092z"/></svg>
+      <p></p>
+      <div class="author"><b>SMPLx Parameters</b></div>
+    </a>
+  </div>
+  <div class="w3-col m3 l3">&nbsp;</div>
+</div>
+
+<div class="w3-row w3-text-black w3-hide-small w3-padding-32">
+  <div class="w3-col s1 m1 l2">&nbsp;</div>
+  <div class="w3-col s10 m10 l8 w3-justify">
+      <span class="w3-large">
+        The data splits .zip file contains following data:
+          <ul>
+            <li><b>TEDXPeople.json</b> -- full list of video links and frame indexes splitted into train and test parts</li>
+            <li><b>TEDXPeople_upperbody.json</b> -- subset containing only upperbody frames</li>
+            <li><b>TEDXPeople_512.json</b> -- subset containing only frames where human body resolution is close to or exceeds 512p</li>
+          </ul>
+  </div>
+</div>
+
+<div class="bgimg-1 w3-padding-64" id="scheme">
+  <div class="w3-row w3-text-black w3-padding-16">
+    <div class="w3-col s1 m1 l2">&nbsp;</div>
+    <div class="w3-col s10 m10 l8 w3-left-align">
+      <span class="w3-xxlarge" >.json files scheme</span>
+    </div>
+    <div class="w3-col s1 m1 l2">&nbsp;</div>
+  </div>
+  <div class="w3-row w3-text-black w3-hide-small w3-padding-4">&nbsp;</div>
+  <div class="w3-row w3-text-black w3-padding-4">
+    <div class="w3-col m1 l2">&nbsp;</div>
+    <div class="w3-col m10 l8 w3-center w3-img">
+      <img style="width: 100%" src="assets/data_scheme.png">
+    </div>
+    <div class="w3-col m1 l2">&nbsp;</div>
+  </div>
+  <div class="w3-row w3-text-black w3-hide-small w3-padding-4">&nbsp;</div>
+  <div class="w3-row w3-text-black w3-hide-small">
+    <div class="w3-col m1 l2">&nbsp;</div>
+    <div class="w3-col s10 m10 l8 w3-center">
+        <span class="w3-large">To get the data you need to download youtube videos with the identifiers stored in .json files and extract corresponding frames from them.</span>
     </div>
     <div class="w3-col m1 l2">&nbsp;</div>
   </div>
